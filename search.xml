@@ -1,6 +1,161 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>JavaScript数据类型</title>
+    <url>/2020/02/24/Javascript%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</url>
+    <content><![CDATA[<h1 id="Javascript数据类型"><a href="#Javascript数据类型" class="headerlink" title="Javascript数据类型"></a>Javascript数据类型</h1><ul>
+<li><strong>值类型：字符串（String）、数字（Number）、布尔（Boolean）、对空（Null）、未定义（Undefined）</strong></li>
+<li><strong>引用类型：对象（Object）、数组（Array）、函数（Function）</strong></li>
+<li><strong>Javascript拥有动态类型</strong><br>  Javascript拥有动态类型意味着系统的变量可用作不同的类型<br>  <code>var x;</code>         x为undefined<br>  <code>var x=5;</code>       x为数字<br>  <code>var x=&quot;John&quot;;</code>  x为字符串<ul>
+<li><strong>Javascript字符串</strong><br>字符串是储存字符<code>（比如“Bill Gates”）</code>的变量<br>字符串引号中可以添加任意文本,可用双引号或单引号<br><code>var carname=&quot;Volvo&quot;;</code><br><code>var carname=&#39;Volvo&#39;;</code><br>可以在字符串中使用引号，只要不匹配包围字符春的引号即可<br><code>var answer=&quot;It alright&quot;;</code><br><code>var answer=&quot;He is called &#39;Johnny&#39;&quot;;</code><br><code>var answer=&#39;He is called &quot;Johnny&quot;&#39;;</code><a id="more"></a></li>
+</ul>
+</li>
+<li><strong>Javascript数字</strong><br>  JavaScript只用一种数字类型。数字可以带小数点，也可以不带<br>  <code>var x1=4.00;</code>使用小数点来写<br>  <code>var x2=4;</code>不适用小数点来写<br>  <strong>极大或极小的数字可以通过科学（指数）计数法来书写</strong>‘<br>  <code>var x1=123e;</code>12300000<br>  <code>var x2=123e-5;</code>0.00123</li>
+<li><strong>Javascript布尔</strong><br>  布尔（逻辑）只有两个值：true或false<br>  <code>var x=true;</code><br>  <code>var y=false;</code><br>  布尔常用在条件测试中</li>
+<li><strong>Javascript数组</strong><br>  下面代码创建名为cars的数组  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var cars&#x3D;new Array();</span><br><span class="line">cars[0]&#x3D;&quot;abc&quot;;</span><br><span class="line">cars[1]&#x3D;&quot;def&quot;;</span><br><span class="line">cars[2]&#x3D;&quot;ghy&quot;;</span><br></pre></td></tr></table></figure>
+  或者（condensed array）凝聚阵列<br>  <code>var cars=new Array(&quot;abc&quot;,&quot;def&quot;,&quot;ghy&quot;);</code><br>  或者（literal array）文字数组<br>  <code>var cars=[&quot;abc&quot;,&quot;def&quot;,&quot;ghy&quot;];</code><br>  数组下表是从零开始，所以第一个项目是cars[0]</li>
+<li><strong>Javascript对象</strong><br>  对象由花括号分隔，在括号内部，对象的属性以名称和值成对的形式 <strong>（name:value）</strong>来定义。属性由逗号分隔<br>  <code>var person={fristname:&quot;Mark&quot;,lastnaame:&quot;Doe&quot;,id:5566};</code><br>  上面例子中的对象(person)有三个属性:firstname、lastname、id<br>  空格和折行无关紧要声明可横跨多行  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var person&#x3D;&#123;</span><br><span class="line">    firstname:&quot;Mark&quot;,</span><br><span class="line">    lastname:&quot;Doe&quot;,</span><br><span class="line">    id:5566</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  对象属性有两种寻址方式<br>  <code>name=person.lastname;</code><br>  <code>name=person[&quot;lastname&quot;];</code></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Javascript</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>JavaScript注释和变量</title>
+    <url>/2020/02/23/JavaScript%E6%B3%A8%E9%87%8A%E5%92%8C%E5%8F%98%E9%87%8F/</url>
+    <content><![CDATA[<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        ol li span{
+            background-color: #eee;
+            color:#555;
+        }
+    </style>
+    <title>Document</title>
+<meta name="generator" content="Hexo 4.2.0"></head>
+<body>
+    <h4>JavaScript注释 可用来说明代码的作用</h4>
+    <ol>
+        <li>单行注释：<span>//开头</span><br></li>
+        <li>多行注释：<span>/*开头 */结尾</span><br></li>
+        <a id="more"></a>
+        <li>Html注释:<span>"<！--开头 -->"结尾</！--开头></span><br></li>
+        <li>在无法判断浏览器是否支持或可使用Javascript脚本可使用<span>"<！-- javascript注释-->"</！--></span>注释，如果支持JavaScript脚本可以用<span>"<！-- -->"</！--></span>把hmtl注解注释掉<br></li>
+        <li>JavaScript注释 可用来说明代码的作用<br></li>
+    </ol>
+    <h4>JavaScript变量</h4>
+    <ol>
+        <li>变量必须以字母开头</li>
+        <li>变量也能以<span>$</span>和<span>_</span>符号开头</li>
+        <li>变量名称对大小写敏感(大写字母Y和小写字母y是不同的变量)</li>
+        <li>
+            JavaScript变量还能保存其他的数据类型，比如文本值(name="Bill Gates")。<br>
+            JavaScript中类似"Bill Gates"这样一条文本被称为字符串
+        </li>
+        <li>
+            JavaScript变量有很多中类型 分别为值类型和引用数据类型<br>
+            当向变量分配文本值时，用双引号或单引号包裹这个值<br>
+            当向变量的值时数值时，不要使用引号。如果用引号包裹数值时，该值会被作为文本处理<br>
+        </li>
+        <li>
+            声明(创建)Javascript变量<br>
+            在Javascript中创建变量通常称为"声明”变量<br>
+            使用var关键字来声明变量<br>
+            <span>var carname;</span><br>
+            变量声明之后，该变量是空的（它没有值）value undefind
+            如需向变量赋值，使用等号<br>
+            <span>carname="Volov"</span><br>
+            也可以在声明变量时对其赋值<br>
+            <span>var carname=“Volvo”</span><br>
+            一条语句，多个变量<br>
+            一条语句中声明很多变量，该语句以var开头并使用逗号分隔变量即可<br>
+            <span>var lastname="Dos",age=30,job="carpenter"</span><br>
+            声明也可横跨多行<br>
+            <span>var lastname="Doe",<br>age=30,<br>job="carpenter";<br></span>
+            一条语句中的声明的多个不可以赋同一个值: <br>
+            <span>var x,y,z=1; -->x,y为undefined（未赋值）,z为1</span>
+            重新声明Javascript变量<br>
+            如果重新声明JavaScript变量，该变量的值不会丢失<br>
+            <span>var carname="Volvo";<br>var carname;</span>
+        </li>
+    </ol>
+</body>
+</html>]]></content>
+      <categories>
+        <category>JavaScript</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>JavaScript保留字</title>
+    <url>/2020/02/22/JavaScript%E4%BF%9D%E7%95%99%E5%AD%97/</url>
+    <content><![CDATA[<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript保留字</title>
+    <script>
+        window.onload=function(){
+            var Otable=document.getElementById('Reserved');
+            var Areserved=[
+                          'abstract','else','instanceof' ,'super', 'boolean', 'enum' ,'int', 'switch', 'break', 'export',
+                          'interface', 'synchronized', 'byte', 'extends' ,'let' ,'this' ,'case' ,'false' ,'long',
+                          'throw' ,'catch' ,'final' ,'native', 'trows', 'char', 'finally', 'new', 'transient', 'class',
+                          'float' ,'null','true' ,'const' ,'for' ,'package', 'try', 'continue' ,'function', 'private',
+                          'typeof' ,'debugger' ,'goto','proteced' ,'var', 'default', 'if', 'public', 'void' ,'delete' ,
+                          'implements', 'return', 'volatile', 'do' ,'import', 'short' ,'while', 'double', 'in', 'static', 'with'
+                          ]
+            var otr=document.createElement("tr");
+                Otable.appendChild(otr)
+            var j=1;
+            for(i=0;i<Areserved.length;i++,j++){
+                var otd=document.createElement("td");
+                    otr.appendChild(otd);
+                    otd.innerHTML=Areserved[i];
+                    if(j%4==0){
+                        otr=document.createElement("tr");
+                        Otable.appendChild(otr);
+                        j=0;
+                    }
+            }
+        }
+    </script>
+<meta name="generator" content="Hexo 4.2.0"></head>
+<body>
+    <table border="1">
+        <tbody id="Reserved">
+            <tr></tr>
+             <a id="more"></a>
+        </tbody>
+    </table>
+    <b>break:用于跳出循环</b><br>
+    <b>catch:语句块在try语句执行错误时执行catch语句块</b><br>
+    <b>continue:跳过循环中的一个迭代</b><br>
+    <b>do...while:执行一个语句块,在条件语句为true时继续执行该语句块</b><br>
+    <b>for:在条件语句为true时可以将代码执行指定的次数</b><br>
+    <b>for...in:用于遍历数组或对象的属性(对数组或对象的属性觉醒循环操作)</b><br>
+    <b>function:定义一个函数</b><br>
+    <b>if...else:用于基于不同的条件来执行不同的动作</b><br>
+    <b>return:退出函数</b><br>
+    <b>switch:用于基于不同的条件来执行不同的动作</b><br>
+    <b>throw:抛出（生成）错误</b><br>
+    <b>try:实现错误处理，与catch一同使用</b><br>
+    <b>var:声明一个变量</b><br>
+    <b>while:当条件语句为true时，执行语句块</b><br>
+    <b>文本字符中使用反斜杠对代码进行换行</b><br>
+    <b>JavaScript是脚本说。浏览器会在读取代码时，逐行地执行脚本代码。而对于传统编程来说，会在执行前对所有代码进行编译</b><br>
+</body>
+</html>]]></content>
+      <categories>
+        <category>JavaScript</category>
+      </categories>
+  </entry>
+  <entry>
     <title>使用hexo+github+node搭建自己的个人博客</title>
     <url>/2020/02/18/hexo%E9%83%A8%E7%BD%B2/</url>
     <content><![CDATA[<h1 id="个人博客的搭建"><a href="#个人博客的搭建" class="headerlink" title="个人博客的搭建"></a>个人博客的搭建</h1><ul>
@@ -14,7 +169,7 @@
 </ul>
 ]]></content>
       <categories>
-        <category>前端</category>
+        <category>博客搭建</category>
       </categories>
       <tags>
         <tag>导航</tag>
