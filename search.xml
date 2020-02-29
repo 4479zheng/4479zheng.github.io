@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>JavaScript调试</title>
+    <url>/2020/02/29/Javascript%E8%B0%83%E8%AF%95/</url>
+    <content><![CDATA[<ul>
+<li>console.log()方法<br>如果浏览器支持调试,可以使用console.log()方法在调试窗口上打印Javascript<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">a&#x3D;5;</span><br><span class="line">b&#x3D;6;</span><br><span class="line">c&#x3D;b-a;</span><br><span class="line">console.log(c);</span><br></pre></td></tr></table></figure></li>
+<li>设置断点<br>在调试窗口中，设置Javascript代码的断点<br>在每个断点上，都会停止执行JavaScript代码，以便于检查JavaScript变量的值<br>检查完毕后，可以重新执行代码</li>
+<li>debugger关键字<br>debugger关键字用于停止执行JavaScript，并调用调试函数<br>这个关键字与调试工具中设置断点的效果是一样的<br>如果没有调试可用，debugger语句无法工作<br>开启debugger，代码第三行前停止执行<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">&lt;p id&#x3D;&quot;demo&quot;&gt;&lt;&#x2F;p&gt;</span><br><span class="line">&lt;p&gt;开启调试工具，在代码执行到第三行前会停止执行。&lt;&#x2F;p&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">var x &#x3D; 15 * 5;</span><br><span class="line">debugger;</span><br><span class="line">document.getElementById(&quot;demo&quot;).innerHTML &#x3D; x;          75 </span><br><span class="line">&lt;&#x2F;script&gt;                                               开启调试工具，在代码执行到第三行前会停止执行。</span><br><span class="line">&lt;&#x2F;body&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>JavaScript</category>
+      </categories>
+  </entry>
+  <entry>
     <title>JavaScript 错误 - throw、try 和 catch</title>
     <url>/2020/02/29/JavaScript%20%E9%94%99%E8%AF%AF%20-%20throw%E3%80%81try%20%E5%92%8C%20catch/</url>
     <content><![CDATA[<p>try     语句测试代码块的错误<br>catch   语句处理错误<br>throw   语句创建自定义错误<br>finally 语句在try和catch语句之后，无论是否有触发异常，该语句都会执行</p>
