@@ -1,6 +1,136 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>JavaScript 错误 - throw、try 和 catch</title>
+    <url>/2020/02/29/JavaScript%20%E9%94%99%E8%AF%AF%20-%20throw%E3%80%81try%20%E5%92%8C%20catch/</url>
+    <content><![CDATA[<p>try     语句测试代码块的错误<br>catch   语句处理错误<br>throw   语句创建自定义错误<br>finally 语句在try和catch语句之后，无论是否有触发异常，该语句都会执行</p>
+<ul>
+<li>JavaScript错误<br>当Javascript引擎执行JavaScript代码时，会发生各种错误<br>可能是语法错误，通常是程序编码错误或错别字<br>可能是拼写错误或者语句中缺少的功能(浏览器的不同)<br>可能是由于来自服务器或用户的错误输出而导致的错误<br>还有其他不可预知的因素</li>
+<li>JavaScript抛出（throw）错误<br>当错误发生时，当程序出问题时，JavaScript引擎通常会停止，并生成一个错误消息<br>对于这种情况的技术术语时:JavaScript抛出一个错误</li>
+<li>JavaScript try和catch<br>try语句允许我们定义哎执行时进行错误测试的代码块<br>catch语句允许我们定义当try代码块发生错误时，所执行的代码块<br>JavaScript语句try和catch时成对出现的<br>语法<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">try&#123;</span><br><span class="line">    异常的抛出</span><br><span class="line">&#125;catch(e)&#123;</span><br><span class="line">    异常的捕获与处理</span><br><span class="line">&#125;finally&#123;</span><br><span class="line">    结束处理</span><br><span class="line">&#125;</span><br><span class="line">如:</span><br><span class="line">var text&#x3D;&quot;&quot;;</span><br><span class="line">function message()&#123;</span><br><span class="line">    try&#123;</span><br><span class="line">       adddlert(&quot;welcome guest!&quot;)</span><br><span class="line">    &#125;catch(err)&#123;</span><br><span class="line">        test&#x3D;&quot;有一个错误\n&quot;;</span><br><span class="line">        test+&#x3D;&quot;错误描述&quot;+err.message+&quot;\n&quot;; &#x2F;&#x2F;错误原因没有finally</span><br><span class="line">        test+&#x3D;&quot;点击确定继续\n&quot;;</span><br><span class="line">        alert(test);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<a id="more"></a></li>
+<li>finally语句<br>finally语句不论之前的tryhecatch中是否产生异常都会执行该代码块<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function myFunction()&#123;</span><br><span class="line">    var message,x;</span><br><span class="line">    message&#x3D;document.getElementById(&quot;p1&quot;);</span><br><span class="line">    message.innerHTML&#x3D;&quot;&quot;;</span><br><span class="line">    x&#x3D;document.getElementById(&quot;demo&quot;).value;</span><br><span class="line">    try&#123;</span><br><span class="line">        if(x&#x3D;&#x3D;&quot;&quot;)throw&quot;值是空的&quot;;</span><br><span class="line">        if(isNaN(x))throw&quot;值不是一个数字&quot;;</span><br><span class="line">        x&#x3D;Number(x);</span><br><span class="line">        if(x&gt;3)throw&quot;大&quot;;</span><br><span class="line">        if(x&lt;&#x3D;3)throw&quot;小&quot;；</span><br><span class="line">    &#125;</span><br><span class="line">    catch(err)&#123;</span><br><span class="line">        message.innerHTML&#x3D;&quot;错误:&quot;+err+&quot;.&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">    finally&#123;</span><br><span class="line">        document.getElementById(&quot;demo&quot;).value&#x3D;&quot;&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>Throw语句<br>throw语句允许我们创建自定义错误<br>正确的技术术语是:创建或抛出异常（exception）<br>如果把throw与try和catch一起使用，能够控制程序流，并生成自定义的错误消息<br>throw exception <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function myFunction()&#123;</span><br><span class="line">    var message,x;</span><br><span class="line">    message&#x3D;document.getElementById(&quot;p1&quot;);</span><br><span class="line">    message.innerHTML&#x3D;&quot;&quot;;</span><br><span class="line">    x&#x3D;document.getElementById(&quot;demo&quot;).value;</span><br><span class="line">    try&#123;</span><br><span class="line">        if(x&#x3D;&#x3D;&quot;&quot;)throw&quot;值是空的&quot;;</span><br><span class="line">        if(isNaN(x))throw&quot;值不是一个数字&quot;;</span><br><span class="line">        x&#x3D;Number(x);</span><br><span class="line">        if(x&gt;3)throw&quot;大&quot;;</span><br><span class="line">        if(x&lt;&#x3D;3)throw&quot;小&quot;；</span><br><span class="line">    &#125;</span><br><span class="line">    catch(err)&#123;</span><br><span class="line">        message.innerHTML&#x3D;&quot;错误:&quot;+err+&quot;.&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">    finally&#123;</span><br><span class="line">        document.getElementById(&quot;demo&quot;).value&#x3D;&quot;&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+]]></content>
+      <categories>
+        <category>JavaScript</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>JavaScript正则表达式</title>
+    <url>/2020/02/28/Javascript%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F1/</url>
+    <content><![CDATA[<ul>
+<li>正则表达式<br>正则表达式是由一个字符序列形成的搜索模式<br>在文本中搜索数据时，可以用搜索模式来描述要查询的内容<br>正则表达式可以是一个简单的字符，或者一个更复杂的模式<br>正则表达式可用于所有文本搜索和文本替换的操作</li>
+<li>语法<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;正则表达式主体&#x2F;修饰符(可选)</span><br><span class="line">例子: var patt&#x3D;&#x2F;runoob&#x2F;i</span><br><span class="line">&#x2F;runoob&#x2F;    是一个正则表达式</span><br><span class="line">runoob      是一个正则表达式主体(用于搜索)</span><br><span class="line">i           是一个修饰符(搜索不区分大小写)</span><br></pre></td></tr></table></figure>
+<a id="more"></a></li>
+<li>使用字符串方法<br>在JavaScript中，正则表达式通常用于两个字符串方法:search()和replace()<br>search方法用于检索字符串中指定的子字符串，或检索与正则表达式相匹配的子字符串，并返回子字符串的起始位置<br>replace()方法用于字符串中用有些字符替换另一些字符，或替换一个正则表达式匹配的子字符串</li>
+<li>search()方法使用正则表达式<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">使用正则表达式搜索&quot;Runoob&quot;字符串,且不区分大小写</span><br><span class="line">var str&#x3D;&quot;Runnob abc&quot;</span><br><span class="line">var n&#x3D;str.search(&#x2F;Runoob&#x2F;i);    结果为1</span><br></pre></td></tr></table></figure></li>
+<li>search()方法使用字符串<br>serach方法可使用字符串作为参数,字符串参数会转换为正则表达式<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var str&#x3D;&quot;Runoob abc&quot;;</span><br><span class="line">var n&#x3D;str.search(&quot;Runoob&quot;);</span><br></pre></td></tr></table></figure></li>
+<li>replace()方法使用正则表达式<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">使用正则表达式且不区分大小写将字符串中的abc替换成efg</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;p id&#x3D;&quot;demo&quot;&gt;abc123&lt;&#x2F;p&gt;</span><br><span class="line">&lt;&#x2F;body&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">var a&#x3D;document.getElementById(&quot;demo&quot;).innerHTML;</span><br><span class="line">var txt&#x3D;a.replace(&#x2F;abc&#x2F;i,&quot;efg&quot;);</span><br><span class="line">document.getElementById(&quot;demo&quot;).innerHTML;&#x3D;txt;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure></li>
+<li>replace()方法使用字符串<br>replace()方法将接收字符串作为参数<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">&lt;p id&#x3D;&quot;demo&quot;&gt;abc123&lt;&#x2F;p&gt;</span><br><span class="line">&lt;&#x2F;body&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">var a&#x3D;document.getElementById(&quot;demo&quot;).innerHTML;</span><br><span class="line">var txt&#x3D;a.replace(&quot;abc&quot;,&quot;efg&quot;);</span><br><span class="line">document.getElementById(&quot;demo&quot;).innerHTML;&#x3D;txt;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure></li>
+<li>正则表达式修饰符<br>修饰符可以在全局搜索中不区分大小写<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">i               执行对大小写不敏感的匹配</span><br><span class="line">g               执行全局匹配（查找所有匹配而非在找到第一个匹配后停止）</span><br><span class="line">m               执行多行匹配</span><br></pre></td></tr></table></figure></li>
+<li>正则表达式模式<br>方括号用于查找某个范围内的字符:<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[abc]       查找方括号之间的任何字符</span><br><span class="line">[0-9]       查找如何从0至9的数字</span><br><span class="line">(x|y)       查找任何人以|分隔的选项</span><br></pre></td></tr></table></figure>
+元字符是拥有特殊含义的字符:<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">\d          查到数字</span><br><span class="line">\s          查找空白字符</span><br><span class="line">\b          匹配单词边界</span><br><span class="line">\uxxxx      查找以十六进制数xxx规定的Unicode字符</span><br></pre></td></tr></table></figure>
+量词<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">n+          匹配如何包含至少一个n的字符串</span><br><span class="line">n*          匹配如何包含零个或多个n的字符串</span><br><span class="line">n？         匹配如何包含零个或一个n的字符串</span><br></pre></td></tr></table></figure></li>
+<li>使用RegExp对象<br>在Javascript中，RegExp对象是一个预定义了属性和方法的正则表达式对象<br>使用test()<br>test()方法是一个正则表达式的方法<br>test()方法用于检测一个字符串是否匹配某个模式，如果字符串中含有的匹配的文本，则返回true，否则返回false<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var patt&#x3D;&#x2F;e&#x2F;;</span><br><span class="line">patt.test(&quot;abcdefg&quot;)    返回值true</span><br><span class="line">&#x2F;e&#x2F;.test(&quot;abcdefg&quot;);</span><br></pre></td></tr></table></figure>
+使用exec()<br>exec()方法是一个正则表达式的方法<br>exec()方法用于检索字符串中的正则表达式的匹配<br>该函数返回一个数组，其中存放匹配的结果，如果未找到匹配，则返回值为null.<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;e&#x2F;.exec(abcdefg);      输出为e</span><br></pre></td></tr></table></figure></li>
+</ul>
+]]></content>
+      <categories>
+        <category>JavaScript</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>JavaScript类型转换</title>
+    <url>/2020/02/27/JavaScript%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/</url>
+    <content><![CDATA[<p><strong>Number（）转换为数字，String()转换为字符串，Boolean转换为布尔值</strong><br><strong>JavaScript数据类型</strong><br>    5种数据类型</p>
+<ul>
+<li>string  </li>
+<li>number </li>
+<li>boolean </li>
+<li>object </li>
+<li>function <a id="more"></a>
+ 3种对象类型</li>
+<li>Object</li>
+<li>Date</li>
+<li>Array<br> 2个不包含任何值的数据类型</li>
+<li>null</li>
+<li>undefined</li>
+<li>可以使用tyof操作符查看JavaScript变量的数据类型 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">typeof &quot;John&quot; 返回 string</span><br><span class="line">typeof  3.14  返回 number</span><br><span class="line">typeof  false 返回 boolean</span><br><span class="line">typeof [1,2,3]返回 object</span><br><span class="line">typeof &#123;age:3&#125;返回 object</span><br><span class="line">typeof new Date()返回object</span><br><span class="line">typeof function()&#123;&#125;返回function</span><br><span class="line">typeof mycar  返回undefined</span><br><span class="line">typeof null   返回object</span><br></pre></td></tr></table></figure>
+ NaN 的数据类型是 number<br> 数组(Array)的数据类型是 object<br> 日期(Date)的数据类型为 object<br> null 的数据类型是 object<br> 未定义变量的数据类型为 undefined<br> 如果对象是 JavaScript Array 或 JavaScript Date ，我们就无法通过 typeof 来判断他们的类型，因为都是 返回 object。</li>
+<li>可以使用constructor查看JavaScript变量的构造函数 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">“John”.constructor          返回函数String()</span><br><span class="line">(3.14).constructor          返回函数Number()</span><br><span class="line">false.constructor           返回函数Boolean()</span><br><span class="line">[name:&#39;abc&#39;].constructor    返回函数Array()</span><br><span class="line">&#123;name:&#39;abc&#39;&#125;.constructor    返回函数Object()</span><br><span class="line">new Date().constructor      返回函数Object()</span><br><span class="line">function()&#123;&#125;.constructor    返回函数function()</span><br></pre></td></tr></table></figure></li>
+<li>将数字转换为字符串<br>全局方法String()可以将数字转换为字符串<br>该方法可用于如何类型的数字、字母、变量、表达式；<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">String(x)       将变量x转换为字符串并返回</span><br><span class="line">string(123)     将变量123转换为字符串并返回</span><br><span class="line">string(100+1)   将数字表达式转换为字符串并返回</span><br></pre></td></tr></table></figure>
+Number方法tostring()同样也有效果<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">x.tostring()</span><br><span class="line">(123).tostring()</span><br><span class="line">(100+1).tostring()</span><br></pre></td></tr></table></figure>
+Number方法还可以使用其他的方法把数字转换为字符串:<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">toExponential()     把对象的值转换为指数计数法</span><br><span class="line">toFixed()           把数字转换为字符串，结果的小数点后有指定位数的数字</span><br><span class="line">toPrecision()       把数字格式化为指定的长度</span><br></pre></td></tr></table></figure></li>
+<li>将布尔值转换为字符串<br>全局方法String()可以把布尔值转换为字符串<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">String(false)   返回&quot;false&quot;</span><br><span class="line">String(true)    返回&quot;true&quot;</span><br></pre></td></tr></table></figure>
+Boolean方法toString()也有相同的效果<br>false.toString()    返回”false”<br>true.toString()     返回”true”</li>
+<li>将日期转换为字符串<br>Date()返回字符串<br>Date()              返回当前计算机的时间<br>全局方法String()可以将日期对向转换为字符串<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">String(new Date())  返回当前计算机的时间</span><br></pre></td></tr></table></figure>
+Date方法toString()也有相同的效果<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">obj&#x3D;new Date()</span><br><span class="line">obj.toString()      返回当前计算机的时间</span><br></pre></td></tr></table></figure>
+在Date方法中还有更多日期转换字符串的函数:<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">getDate()       从Date对象返回一个月中的某一天(1~31)</span><br><span class="line">getDay()        从Date对象返回一周中的某一天(0~6)</span><br><span class="line">getFullYear()   从Date对象以四位数字返回年份</span><br><span class="line">getHours()      返回Date对象的小时(0~23)</span><br><span class="line">getMillisecond()返回Date对象的毫秒(0~999)</span><br><span class="line">getMinutes()    返回Date对象的分钟(0~59)</span><br><span class="line">getMonth()      返回Date对象的月份(0~11)</span><br><span class="line">getSeconds()    返回Date对象的秒数(0~59)</span><br><span class="line">getTime()       返回1970年1月1日至今的毫秒数</span><br></pre></td></tr></table></figure></li>
+<li>将字符串转换为数字<br>全局方法Number()可以将字符串转换为数字<br>字符串包含的数字“3.14”转换为数字3.14<br>空字符串转换为0<br>其他字符串会转换为NaN(不是个数字)<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Number(&quot;3.14&quot;)      返回3.14</span><br><span class="line">Number(&quot; &quot;)         返回0</span><br><span class="line">Number(&quot;&quot;)          返回0</span><br><span class="line">Number(&quot;11  222&quot;)   返回NaN</span><br></pre></td></tr></table></figure>
+Number方法，还有其他字符串转为数字的方法<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">parseFloat()         解析一个字符串，并返回一个浮点数</span><br><span class="line">parseInt()           解析一个字符串，并返回一个整数</span><br></pre></td></tr></table></figure></li>
+<li>一元运算符 +<br>Operator +  可用于将变量转换为数字<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var y&#x3D;&quot;5&quot;;          y是一个字符串</span><br><span class="line">var x&#x3D;+y;           x是一个数字</span><br></pre></td></tr></table></figure>
+如果变量不能转换，它仍然会是一个数字，但值为NaN(不是一个数字)<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var y&#x3D;“abc”         y是一个字符串</span><br><span class="line">var x&#x3D;+y;           x是一个数字（NaN）</span><br></pre></td></tr></table></figure></li>
+<li>将布尔值转换为数字<br>全局方法Number()可将布尔值转换为数字<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Number(false)       返回0</span><br><span class="line">Number(true)        返回1</span><br></pre></td></tr></table></figure></li>
+<li>将日期转换为数字<br>全局方法Number()可将日期转换为数字<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">date&#x3D;new Date()</span><br><span class="line">Number(date)        返回1404568027739</span><br></pre></td></tr></table></figure>
+日期方法getTime()也有相同的效果<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">date&#x3D;new Date()</span><br><span class="line">date.getTime()       返回1404568027739</span><br></pre></td></tr></table></figure></li>
+<li>自动转换类型<br>当JavaScript测试操作一个”错误”的数据类型时，会自动转换为”正确”的数据类型<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">5+null      返回5       null转换为0</span><br><span class="line">&quot;5&quot;+null    返回&quot;5null&quot; null转换为&quot;null&quot;</span><br><span class="line">&quot;5&quot;+1       返回&quot;51&quot;    1转换为&quot;1&quot;</span><br><span class="line">&quot;5&quot;-1       返回4       &quot;5&quot;转换为5</span><br></pre></td></tr></table></figure></li>
+<li>自动转换字符串<br>当尝试输出一个对象或者一个变量时Javascript会自动调用变量的toString()方法<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">document.getElementById(&quot;demo&quot;).innerHtml&#x3D;myvar;</span><br><span class="line">myVar&#x3D;&#123;&quot;name&quot;:&quot;abc&quot;&#125;    toString转换为&quot;[object  Object]&quot;</span><br><span class="line">myVar&#x3D;[1,2,3]           toString转换为&quot;1,2,3&quot;</span><br><span class="line">myVar&#x3D;new Date()        toString转换为&quot;Fri Jul 18 2014 09:08:55 GMT+0200&quot;</span><br></pre></td></tr></table></figure>
+数字和布尔值经常相互转换<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">myVar&#x3D;123       toString转换为&quot;123&quot;</span><br><span class="line">myVar&#x3D;true      toString转换为&quot;true&quot;</span><br><span class="line">myVar&#x3D;false     toString转换为&quot;false&quot;</span><br></pre></td></tr></table></figure></li>
+</ul>
+]]></content>
+      <categories>
+        <category>JavaScript</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>JavaScript typeof null undefind</title>
+    <url>/2020/02/27/JavaScript%20typeof%E3%80%81null%E3%80%81undefined/</url>
+    <content><![CDATA[<ul>
+<li><strong>typeof操作符</strong><br>可以使用typeof操作符来检测变量的数据类型<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">typeof &quot;John&quot; 返回 string</span><br><span class="line">typeof  3.14  返回 number</span><br><span class="line">typeof  false 返回 Boolean</span><br><span class="line">typeof [1,2,3]返回 object</span><br><span class="line">typeof &#123;age:3&#125;返回 object</span><br></pre></td></tr></table></figure>
+JavaScript中数组是一种特殊的对象类型<a id="more"></a></li>
+<li><strong>null</strong><br>null：主动释放一个变量引用的对象，表示一个变量不再指向如何对象地址<br>当使用完一个比较大的对象时，需要对其进行释放内存时，设置为null<br>在JavaScript中null表示“什么都没有”<br>null是一个只有一个值的特殊类型，表示一个空对象引用<br>用typeof检测null返回是object<br>可以把一个变量设置为null起到清空对象的作用<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var person&#x3D;null; 值为null（空），但类型为对象</span><br></pre></td></tr></table></figure></li>
+<li><strong>undefined</strong><br>undefined：是属于没有赋值变量的默认值，指定赋值<br>在JavaScript中，undefined是一个没有设置值的变量<br>typeof一个没有值的变量会返回undefined<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var person 值为undefined，类型为undefined</span><br></pre></td></tr></table></figure>
+任何变量都可以通过设置值为undefined来清空，类型为undefined<br>var person=undefined; 值为undefined，类型为undefined</li>
+<li><strong>undefined和null区别</strong><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">typeof  undefined undefined     null&#x3D;&#x3D;&#x3D;undefined false</span><br><span class="line">typeof  null      object        null&#x3D;&#x3D;undefinde  true</span><br></pre></td></tr></table></figure>
+共同点：都是原始类型，保存在栈中变量本地<br>不同点：<br>（1）undefined表示变量声明过但并未赋值，是属于未赋值变量默认值<br>（2）null表示一个变量将来可能指向一个对象，一般用于主动释放指向对象的引用<br>延伸—垃圾回收站<br>专门释放对象内存的程序<br>（1）在底层，后台伴随当前程序同时运行；引擎会定时自动调用垃圾回收站<br>（2）只有一个对象不再被如何变量引用时，才释放</li>
+</ul>
+]]></content>
+      <categories>
+        <category>JavaScript</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>JavaScript break和continue语句</title>
+    <url>/2020/02/27/JavaScript%20breakhecontinue%E8%AF%AD%E5%8F%A5/</url>
+    <content><![CDATA[<ul>
+<li><strong>break语句</strong><br>break语句跳出循环后，会继续执行该循环之后的代码（如果有的话）<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">for(i&#x3D;0;i&lt;10;i++)&#123;</span><br><span class="line">    if(i&#x3D;&#x3D;5)&#123;</span><br><span class="line">        break;</span><br><span class="line">    &#125;</span><br><span class="line">    x&#x3D;x+&quot;this number is&quot;+i+&quot;&lt;br&gt;&quot;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<a id="more"></a></li>
+<li><strong>continue语句</strong><br>continue语句中断循环中的迭代，如果出现了指定的条件，然后继续循环下一个迭代<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">for(i&#x3D;0;i&lt;&#x3D;10;i++)&#123;</span><br><span class="line">    if(i&#x3D;5)</span><br><span class="line">    continue;</span><br><span class="line">    x&#x3D;x+&quot;The number is &quot;+i+&quot;&lt;br&gt;&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>JavaScript</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>JavaScript循环语句</title>
+    <url>/2020/02/27/JavaScript%E5%BE%AA%E7%8E%AF/</url>
+    <content><![CDATA[<ul>
+<li><strong>JavaScript for 循环</strong><br>循环可以将代码块执行指定的次数<br>如果希望一边又一遍地运行相同的代码，并且每次的值都不同，那么口语使用循环<br>JavaScript支持不同类型的循环：<br>for 循环一定的次数代码块<br>for循环的语法<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">for（语句1；语句2；语句3）</span><br><span class="line">&#123;</span><br><span class="line">    被执行的代码块</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+语句1（代码块）开始前执行（在循环开始之前设置变量）<br>语句2 定义运行循环（代码块）的条件（定义循环运行的条件）<br>语句3 在循环（代码块）已被执行之后执行（在每次代码块已被执行后增加一个值）<br>语句1是可选的，也就是说不适用语句1也是可以的，可以在语句1中的初始化容易（或者多个）值<br>语句2同样是可选的<br>如果省略语句2，那么必须在循环内特工break否则循环就无法停下（死循环）浏览器可能会崩溃<br>如果语句2返回true，则循环再次开始，如果为false，则循环结束<br>语句3可选的<br>语句3通常是增加初始化变量的值，有多种用法增量可以实分数（i–）或者更大（i=i+15）<br>语句3省略的话要在循环内部增加相应的代码<br>for/in 循环遍历对象的属性<br>for/in循环语句<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var person&#123;name:&#39;abc&#39;,age:18&#125;</span><br><span class="line">for（x in person） x为属性名</span><br><span class="line">&#123;</span><br><span class="line">    text&#x3D;text+person[x];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+定义数组后对数组进行赋值，之间如有某些下标未适应（即未赋值），在遍历的时候，采用一般的for循环和for…in循环得到的结果不同<br>for…in循环会自动跳过那些没被赋值的元素，而for循环则不会，它会显示出undefined<br>while 当指定的条件为true时循环指定的代码块<br>while循环语法<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">while(条件)</span><br><span class="line">&#123;</span><br><span class="line">    需要执行的代码</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+如果忘记增加条件中所用遍历的值，该循环永远不会结束（死循环），浏览器可能会崩溃<br>do/while 同样指定的退奖为true时循环指定的代码块，该循环会在检查条件是否为真之前先运行一次代码块，如果条件为false停止循环，为true继续运行<br>do/while语法<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">do</span><br><span class="line">&#123;</span><br><span class="line">    需要执行的代码</span><br><span class="line">&#125;</span><br><span class="line">wile（条件）</span><br></pre></td></tr></table></figure></li>
+</ul>
+]]></content>
+      <categories>
+        <category>JavaScript</category>
+      </categories>
+  </entry>
+  <entry>
     <title>JavaScript条件语句</title>
     <url>/2020/02/26/JavaScript%E6%9D%A1%E4%BB%B6%E8%AF%AD%E5%8F%A5/</url>
     <content><![CDATA[<p><strong>条件语句基于不同的条件来执行不同的动作</strong><br><strong>条件语句</strong><br>在JavaScript中，我们可使用if、if…else、if…else if…else、switch语句<br><strong>if语句，只有指定条件为true时，使用该语句来执行代码</strong></p>
@@ -12,7 +142,7 @@
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">if（condition1）&#123;</span><br><span class="line">    当条件1为true时执行的代码</span><br><span class="line">&#125;else if（condition2）&#123;</span><br><span class="line">    当条件2为true时执行的代码</span><br><span class="line">&#125;else&#123;</span><br><span class="line">     当条件1和条件2都不为true时执行的代码</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>使用小写的if 用大写IF会生成JavaScript错误<br><strong>switch语句使用该语句来选择多个代码块之一来执行</strong></p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">switch(n)</span><br><span class="line">&#123;</span><br><span class="line">    case 1:</span><br><span class="line">            执行代码块1</span><br><span class="line">            break;</span><br><span class="line">    case 2:</span><br><span class="line">            执行代码块2</span><br><span class="line">            break;</span><br><span class="line">    default:</span><br><span class="line">            与case1和case2不同时执行的代码</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>工作原理：首先设置表达式n（通常一个变量）随后表达式的值会与结构中的每个case的值做比较如果存在匹配，则与该case关联的代码块会被执行。使用break来阻止代码自动地向一个case运行。</p>
+<p>工作原理：首先设置表达式n（通常一个变量）随后表达式的值会与结构中的每个case的值做比较如果存在匹配，则与该case关联的代码块会被执行。使用break来阻止代码自动地向一个case运行。<br>使用default关键字来规定匹配不存在时做的事情</p>
 ]]></content>
       <categories>
         <category>JavaScript</category>

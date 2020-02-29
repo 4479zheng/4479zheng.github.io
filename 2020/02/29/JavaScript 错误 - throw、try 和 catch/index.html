@@ -79,14 +79,14 @@
 
 
 
-<meta name="description" content="JavaScript保留字              window.onload&#x3D;function(){             var Otable&#x3D;document.getElementById(&#39;Reserved&#39;);             var Areserved&#x3D;[                           &#39;abstract&#39;,&#39;else">
+<meta name="description" content="try     语句测试代码块的错误catch   语句处理错误throw   语句创建自定义错误finally 语句在try和catch语句之后，无论是否有触发异常，该语句都会执行  JavaScript错误当Javascript引擎执行JavaScript代码时，会发生各种错误可能是语法错误，通常是程序编码错误或错别字可能是拼写错误或者语句中缺少的功能(浏览器的不同)可能是由于来自服务器或用户">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript保留字">
-<meta property="og:url" content="http://yoursite.com/2020/02/22/JavaScript%E4%BF%9D%E7%95%99%E5%AD%97/index.html">
+<meta property="og:title" content="JavaScript 错误 - throw、try 和 catch">
+<meta property="og:url" content="http://yoursite.com/2020/02/29/JavaScript%20%E9%94%99%E8%AF%AF%20-%20throw%E3%80%81try%20%E5%92%8C%20catch/index.html">
 <meta property="og:site_name" content="Personal blog">
-<meta property="og:description" content="JavaScript保留字              window.onload&#x3D;function(){             var Otable&#x3D;document.getElementById(&#39;Reserved&#39;);             var Areserved&#x3D;[                           &#39;abstract&#39;,&#39;else">
-<meta property="article:published_time" content="2020-02-22T08:33:17.621Z">
-<meta property="article:modified_time" content="2020-02-24T14:39:06.452Z">
+<meta property="og:description" content="try     语句测试代码块的错误catch   语句处理错误throw   语句创建自定义错误finally 语句在try和catch语句之后，无论是否有触发异常，该语句都会执行  JavaScript错误当Javascript引擎执行JavaScript代码时，会发生各种错误可能是语法错误，通常是程序编码错误或错别字可能是拼写错误或者语句中缺少的功能(浏览器的不同)可能是由于来自服务器或用户">
+<meta property="article:published_time" content="2020-02-29T08:23:40.549Z">
+<meta property="article:modified_time" content="2020-02-29T09:02:41.214Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -117,13 +117,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/02/22/JavaScript保留字/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/02/29/JavaScript 错误 - throw、try 和 catch/"/>
 
 
 
 
 
-  <title>JavaScript保留字 | Personal blog</title>
+  <title>JavaScript 错误 - throw、try 和 catch | Personal blog</title>
   
 
 
@@ -133,7 +133,7 @@
 
 
 
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -264,7 +264,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/22/JavaScript%E4%BF%9D%E7%95%99%E5%AD%97/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/29/JavaScript%20%E9%94%99%E8%AF%AF%20-%20throw%E3%80%81try%20%E5%92%8C%20catch/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
@@ -281,7 +281,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">JavaScript保留字</h1>
+          <h1 class="post-title" itemprop="name headline">JavaScript 错误 - throw、try 和 catch</h1>
         
 
         <div class="post-meta">
@@ -293,8 +293,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-02-22T16:33:17+08:00">
-                2020-02-22
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-02-29T16:23:40+08:00">
+                2020-02-29
               </time>
             
 
@@ -353,64 +353,16 @@
       
 
       
-        <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript保留字</title>
-    <script>
-        window.onload=function(){
-            var Otable=document.getElementById('Reserved');
-            var Areserved=[
-                          'abstract','else','instanceof' ,'super', 'boolean', 'enum' ,'int', 'switch', 'break', 'export',
-                          'interface', 'synchronized', 'byte', 'extends' ,'let' ,'this' ,'case' ,'false' ,'long',
-                          'throw' ,'catch' ,'final' ,'native', 'trows', 'char', 'finally', 'new', 'transient', 'class',
-                          'float' ,'null','true' ,'const' ,'for' ,'package', 'try', 'continue' ,'function', 'private',
-                          'typeof' ,'debugger' ,'goto','proteced' ,'var', 'default', 'if', 'public', 'void' ,'delete' ,
-                          'implements', 'return', 'volatile', 'do' ,'import', 'short' ,'while', 'double', 'in', 'static', 'with'
-                          ]
-            var otr=document.createElement("tr");
-                Otable.appendChild(otr)
-            var j=1;
-            for(i=0;i<Areserved.length;i++,j++){
-                var otd=document.createElement("td");
-                    otr.appendChild(otd);
-                    otd.innerHTML=Areserved[i];
-                    if(j%4==0){
-                        otr=document.createElement("tr");
-                        Otable.appendChild(otr);
-                        j=0;
-                    }
-            }
-        }
-    </script>
-<meta name="generator" content="Hexo 4.2.0"></head>
-<body>
-    <table border="1">
-        <tbody id="Reserved">
-            <tr></tr>
-             <a id="more"></a>
-        </tbody>
-    </table>
-    <b>break:用于跳出循环</b><br>
-    <b>catch:语句块在try语句执行错误时执行catch语句块</b><br>
-    <b>continue:跳过循环中的一个迭代</b><br>
-    <b>do...while:执行一个语句块,在条件语句为true时继续执行该语句块</b><br>
-    <b>for:在条件语句为true时可以将代码执行指定的次数</b><br>
-    <b>for...in:用于遍历数组或对象的属性(对数组或对象的属性觉醒循环操作)</b><br>
-    <b>function:定义一个函数</b><br>
-    <b>if...else:用于基于不同的条件来执行不同的动作</b><br>
-    <b>return:退出函数</b><br>
-    <b>switch:用于基于不同的条件来执行不同的动作</b><br>
-    <b>throw:抛出（生成）错误</b><br>
-    <b>try:实现错误处理，与catch一同使用</b><br>
-    <b>var:声明一个变量</b><br>
-    <b>while:当条件语句为true时，执行语句块</b><br>
-    <b>文本字符中使用反斜杠对代码进行换行</b><br>
-    <b>JavaScript是脚本说。浏览器会在读取代码时，逐行地执行脚本代码。而对于传统编程来说，会在执行前对所有代码进行编译</b><br>
-</body>
-</html>
+        <p>try     语句测试代码块的错误<br>catch   语句处理错误<br>throw   语句创建自定义错误<br>finally 语句在try和catch语句之后，无论是否有触发异常，该语句都会执行</p>
+<ul>
+<li>JavaScript错误<br>当Javascript引擎执行JavaScript代码时，会发生各种错误<br>可能是语法错误，通常是程序编码错误或错别字<br>可能是拼写错误或者语句中缺少的功能(浏览器的不同)<br>可能是由于来自服务器或用户的错误输出而导致的错误<br>还有其他不可预知的因素</li>
+<li>JavaScript抛出（throw）错误<br>当错误发生时，当程序出问题时，JavaScript引擎通常会停止，并生成一个错误消息<br>对于这种情况的技术术语时:JavaScript抛出一个错误</li>
+<li>JavaScript try和catch<br>try语句允许我们定义哎执行时进行错误测试的代码块<br>catch语句允许我们定义当try代码块发生错误时，所执行的代码块<br>JavaScript语句try和catch时成对出现的<br>语法<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">try&#123;</span><br><span class="line">    异常的抛出</span><br><span class="line">&#125;catch(e)&#123;</span><br><span class="line">    异常的捕获与处理</span><br><span class="line">&#125;finally&#123;</span><br><span class="line">    结束处理</span><br><span class="line">&#125;</span><br><span class="line">如:</span><br><span class="line">var text&#x3D;&quot;&quot;;</span><br><span class="line">function message()&#123;</span><br><span class="line">    try&#123;</span><br><span class="line">       adddlert(&quot;welcome guest!&quot;)</span><br><span class="line">    &#125;catch(err)&#123;</span><br><span class="line">        test&#x3D;&quot;有一个错误\n&quot;;</span><br><span class="line">        test+&#x3D;&quot;错误描述&quot;+err.message+&quot;\n&quot;; &#x2F;&#x2F;错误原因没有finally</span><br><span class="line">        test+&#x3D;&quot;点击确定继续\n&quot;;</span><br><span class="line">        alert(test);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<a id="more"></a></li>
+<li>finally语句<br>finally语句不论之前的tryhecatch中是否产生异常都会执行该代码块<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">function myFunction()&#123;</span><br><span class="line">    var message,x;</span><br><span class="line">    message&#x3D;document.getElementById(&quot;p1&quot;);</span><br><span class="line">    message.innerHTML&#x3D;&quot;&quot;;</span><br><span class="line">    x&#x3D;document.getElementById(&quot;demo&quot;).value;</span><br><span class="line">    try&#123;</span><br><span class="line">        if(x&#x3D;&#x3D;&quot;&quot;)throw&quot;值是空的&quot;;</span><br><span class="line">        if(isNaN(x))throw&quot;值不是一个数字&quot;;</span><br><span class="line">        x&#x3D;Number(x);</span><br><span class="line">        if(x&gt;3)throw&quot;大&quot;;</span><br><span class="line">        if(x&lt;&#x3D;3)throw&quot;小&quot;；</span><br><span class="line">    &#125;</span><br><span class="line">    catch(err)&#123;</span><br><span class="line">        message.innerHTML&#x3D;&quot;错误:&quot;+err+&quot;.&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">    finally&#123;</span><br><span class="line">        document.getElementById(&quot;demo&quot;).value&#x3D;&quot;&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>Throw语句<br>throw语句允许我们创建自定义错误<br>正确的技术术语是:创建或抛出异常（exception）<br>如果把throw与try和catch一起使用，能够控制程序流，并生成自定义的错误消息<br>throw exception <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">function myFunction()&#123;</span><br><span class="line">    var message,x;</span><br><span class="line">    message&#x3D;document.getElementById(&quot;p1&quot;);</span><br><span class="line">    message.innerHTML&#x3D;&quot;&quot;;</span><br><span class="line">    x&#x3D;document.getElementById(&quot;demo&quot;).value;</span><br><span class="line">    try&#123;</span><br><span class="line">        if(x&#x3D;&#x3D;&quot;&quot;)throw&quot;值是空的&quot;;</span><br><span class="line">        if(isNaN(x))throw&quot;值不是一个数字&quot;;</span><br><span class="line">        x&#x3D;Number(x);</span><br><span class="line">        if(x&gt;3)throw&quot;大&quot;;</span><br><span class="line">        if(x&lt;&#x3D;3)throw&quot;小&quot;；</span><br><span class="line">    &#125;</span><br><span class="line">    catch(err)&#123;</span><br><span class="line">        message.innerHTML&#x3D;&quot;错误:&quot;+err+&quot;.&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">    finally&#123;</span><br><span class="line">        document.getElementById(&quot;demo&quot;).value&#x3D;&quot;&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+
       
     </div>
     
@@ -434,8 +386,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/02/18/hexo%E9%83%A8%E7%BD%B2/" rel="next" title="使用hexo+github+node搭建自己的个人博客">
-                <i class="fa fa-chevron-left"></i> 使用hexo+github+node搭建自己的个人博客
+              <a href="/2020/02/28/Javascript%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F1/" rel="next" title="JavaScript正则表达式">
+                <i class="fa fa-chevron-left"></i> JavaScript正则表达式
               </a>
             
           </div>
@@ -443,10 +395,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/02/23/JavaScript%E6%B3%A8%E9%87%8A%E5%92%8C%E5%8F%98%E9%87%8F/" rel="prev" title="JavaScript注释和变量">
-                JavaScript注释和变量 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
