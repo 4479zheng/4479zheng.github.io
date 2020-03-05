@@ -1,6 +1,193 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>JavaScript this关键字</title>
+    <url>/2020/03/05/Javascript%20this%E5%85%B3%E9%94%AE%E5%AD%97/</url>
+    <content><![CDATA[<p>面向对象语言中this表示当前对象的一个引用<br>但在JavaScript中this表示固定不变的，它会随着执行环境的改变而改变。</p>
+<ul>
+<li>在方法中，this表示该方法所属的对象</li>
+<li>如果单独使用，this表示全局对象</li>
+<li>在函数中，this表示全局对象</li>
+<li>在函数中，在严格模式下，this是未定义的(undefined)。</li>
+<li>在事件中，this表示接收事件的元素</li>
+<li>类似call()和apply()方法可以将this引用到任何对象<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;p id&#x3D;&quot;demo&quot;&gt;&lt;&#x2F;p&gt;</span><br><span class="line">        &lt;script&gt;</span><br><span class="line">        var person&#x3D;&#123;</span><br><span class="line">            firstName:&#39;John&#39;,</span><br><span class="line">            lastName:&#39;Doe&#39;,</span><br><span class="line">            id:&#39;5566&#39;,</span><br><span class="line">        fullName:function()&#123;</span><br><span class="line">            return this.firstName+&quot;&quot;+this. lastName;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">	document.getElementById(&quot;demo&quot;).innerHTML&#x3D;person.fullName();</span><br><span class="line">        &lt;&#x2F;script&gt;</span><br><span class="line">    &lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p><strong>方法中的this</strong><br>在对象方法中，this指向调用它所在的对象<br>上面的例子，this表示person对象<br>fullName方法所属的对象就是person</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;p id&#x3D;&quot;demo&quot;&gt;&lt;&#x2F;p&gt;</span><br><span class="line">        &lt;script&gt;</span><br><span class="line">        var person&#x3D;&#123;</span><br><span class="line">            firstName:&#39;John&#39;,</span><br><span class="line">            lastName:&#39;Doe&#39;,</span><br><span class="line">            id:&#39;5566&#39;,</span><br><span class="line">        fullName:function()&#123;</span><br><span class="line">            return this.firstName+&quot;&quot;+this. lastName;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">	document.getElementById(&quot;demo&quot;).innerHTML&#x3D;person.fullName();</span><br><span class="line">        &lt;&#x2F;script&gt;</span><br><span class="line">    &lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<p><strong>单独使用this</strong><br>单独使用this，则它指向全局(Global)对象<br>在浏览器中，window就是该全局对象那个为[object window];</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;p id&#x3D;&quot;demo&quot;&gt;&lt;&#x2F;p&gt;</span><br><span class="line">        &lt;script&gt;</span><br><span class="line">            var x&#x3D;this;</span><br><span class="line">            document.getElementById(&quot;demo&quot;).innerHTML&#x3D;x;</span><br><span class="line">        &lt;&#x2F;script&gt;</span><br><span class="line">    &lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
+<p>严格模式下，如果单独使用，this也是指向全局(Global)对象</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;p id&#x3D;&quot;demo&quot;&gt;&lt;&#x2F;p&gt;</span><br><span class="line">        &lt;script&gt;</span><br><span class="line">            &quot;use strict&quot;;</span><br><span class="line">            var x&#x3D;this;</span><br><span class="line">            document.getElementById(&quot;demo&quot;).innerHTML&#x3D;x;</span><br><span class="line">        &lt;&#x2F;script&gt;</span><br><span class="line">    &lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>函数中使用this(默认)</strong><br>在函数中，函数的所属者默认绑定到this上。<br>在浏览器中，window就是该全局对象为[object Window];</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;p id&#x3D;&quot;demo&quot;&gt;&lt;&#x2F;p&gt;</span><br><span class="line">        &lt;script&gt;</span><br><span class="line">            wfunction myFunction()&#123;</span><br><span class="line">                return this;</span><br><span class="line">            &#125;</span><br><span class="line">            document.getElementById(&quot;demo&quot;).innerHTML&#x3D;myFunction();</span><br><span class="line">        &lt;&#x2F;script&gt;</span><br><span class="line">    &lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>函数中使用this(严格模式)</strong><br>严格模式下函数是没有绑定到this上，这时候this是undefined</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;p id&#x3D;&quot;demo&quot;&gt;&lt;&#x2F;p&gt;</span><br><span class="line">        &lt;script&gt;</span><br><span class="line">            &quot;use strict&quot;;</span><br><span class="line">            function myFunction()&#123;</span><br><span class="line">                return this;</span><br><span class="line">            &#125;</span><br><span class="line">            document.getElementById(&quot;demo&quot;).innerHTML&#x3D;myFunction();</span><br><span class="line">        &lt;&#x2F;script&gt;</span><br><span class="line">    &lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>事件中的this</strong><br>在HTML事件句柄中，this指向了接收事件的HTML元素</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;button onclick&#x3D;&quot;this.style.display&#x3D;&#39;none&#39;&quot;&gt;</span><br><span class="line">        点击后就消失了</span><br><span class="line">        &lt;&#x2F;button&gt;</span><br><span class="line">    &lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>对象方法中绑定</strong><br>this是person对象，person对象是函数的所有者</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;p id&#x3D;&quot;demo&quot;&gt;&lt;&#x2F;p&gt;</span><br><span class="line">        &lt;script&gt;</span><br><span class="line">            var person&#x3D;&#123;</span><br><span class="line">                firstName:&quot;John&quot;,</span><br><span class="line">                lastName:&quot;Doe&quot;,</span><br><span class="line">                id:5555,</span><br><span class="line">                myFunction:function()&#123;</span><br><span class="line">                    return this;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;;</span><br><span class="line">            document.getElementById(&quot;demo&quot;).innerHTML&#x3D;person.myFunction();</span><br><span class="line">        &lt;&#x2F;script&gt;</span><br><span class="line">    &lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;p id&#x3D;&quot;demo&quot;&gt;&lt;&#x2F;p&gt;</span><br><span class="line">        &lt;script&gt;</span><br><span class="line">            var person&#x3D;&#123;</span><br><span class="line">                firstName:&quot;John&quot;,</span><br><span class="line">                lastName:&quot;Doe&quot;,</span><br><span class="line">                id:5555,</span><br><span class="line">                myFunction:function()&#123;</span><br><span class="line">                    return this.firstName+&quot; &quot;+this.lastName;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;;</span><br><span class="line">            document.getElementById(&quot;demo&quot;).innerHTML&#x3D;person.myFunction();</span><br><span class="line">        &lt;&#x2F;script&gt;</span><br><span class="line">    &lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
+<p>this.firstName表示this(person)对象的firstName属性<br><strong>显示函数绑定</strong><br>在JavaScript中函数也是对象，对象则有方法，apply和call就是函数对象的方法。这两个方法异常强大，他们允许切换函数执行的上下文环境(context)，即this绑定的对象。<br>使用person2作为参数来调用person1.fullName方法时，this将指向person2,即使它是person1的方法</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;p id&#x3D;&quot;demo&quot;&gt;&lt;&#x2F;p&gt;</span><br><span class="line">        &lt;script&gt;</span><br><span class="line">            var person1&#x3D;&#123;</span><br><span class="line">                fullName:function()&#123;</span><br><span class="line">                    return this.firstName+&quot; &quot;+this.lastName;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;;</span><br><span class="line">            var person2&#x3D;&#123;</span><br><span class="line">                firstName:&quot;John&quot;,</span><br><span class="line">                lastName:&quot;Doe&quot;,</span><br><span class="line">            &#125;</span><br><span class="line">            var x&#x3D;person1.fullName.call(person2);</span><br><span class="line">            document.getElementById(&quot;demo&quot;).innerHTML&#x3D;x;</span><br><span class="line">        &lt;&#x2F;script&gt;</span><br><span class="line">    &lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>JavaScript</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>JavaScript保留关键字</title>
+    <url>/2020/03/04/JavaScript%E4%BF%9D%E7%95%99%E5%85%B3%E9%94%AE%E5%AD%97/</url>
+    <content><![CDATA[<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<meta name="generator" content="Hexo 4.2.0"></head>
+<body>
+    <table border="1">
+        <b>Javascript保留关键字</b>
+        <p>JavaScripts的保留关键字不可以用作变量、标签或者函数名。有些保留字是作为JavaScript以后扩展使用</p>
+        <a id="more"></a>
+        <tbody id="Reserved">
+            <tr></tr>
+        </tbody>
+        <p>*标记的关键字是ECMAscript5中新添加的</p>
+    </table>
+    <table>
+        <b>JavaScript对象、属性和方法</b>
+        <p>应该避免使用JavaScript内置的对象、属性和方法</p>
+        <tbody id="ObjectPropertyMethod">
+            <tr></tr>
+        </tbody>
+    </table>
+    <table>
+        <b>Java保留关键字</b>
+        <tbody id="Java">
+            <tr></tr>
+        </tbody>
+    </table>
+    <table>
+        <b>window保留关键字</b>
+        <p>在HTML中，避免使用HTML和window对象和属性的名称作为JavaScript的变量和函数名</p>
+        <tbody id="window">
+            <tr></tr>
+        </tbody>
+    </table>
+    <table>
+        <b>HTML事件句柄</b>
+        <tbody id="HTML">
+            <tr></tr>
+        </tbody>
+    </table>
+    <b>非标准JavaScript</b>
+    <p>除了保留关键字，在JavaScript实现中也有一些废标准的关键字</p>
+    <p>conset关键字，用于定义变量。一些JavaScript引擎把const当作var的同义词，另一些引擎恶霸const当作只读变量的定义</p>
+    <p>Const是JavaScript的扩展，JavaScript引擎支持它用Firefox和chrome中，但是他并不是JavaScript标准ES3和ES5的组成部分。建议：不要使用它</p>
+    <script>
+        var Areserved=[
+                         'abstract','arguments','else','eval','instanceof' ,'super*', 'boolean', 'enum*' ,'int', 'switch', 'break', 'export*',
+                         'interface', 'synchronized', 'byte', 'extends*' ,'let' ,'this' ,'case' ,'false' ,'long',
+                         'throw',"throws" ,'catch' ,'final' ,'native', 'trows', 'char', 'finally', 'new', 'transient', 'class*',
+                         'float' ,'null','true' ,'const' ,'for' ,'package', 'try', 'continue' ,'function', 'private',
+                         'typeof' ,'debugger' ,'goto','proteced' ,'var', 'default', 'if', 'public', 'void' ,'delete' ,
+                         'implements', 'return', 'volatile', 'do' ,'import*', 'short' ,'while', 'double', 'in', 'static', 'with','yield'
+                         ];
+        var Areserved2=[
+                        'Array','Date','eval','function','hasOwnProperty','Infinity','isFinite','isNaN','isPrototypeOf','length','Math','NaN',
+                        'name','Number','Object','prototype','String','toString','undefined','valueOf'
+        ];
+        var Areserved3=[
+                        'getClass','java','javaArray','javaClass','JavaObject','JavaPackage'
+        ];
+        var Areserved4=[
+                        'alert','all','anchor','anchors','area','ssign','blur','button','checkbox','clearInterval','clearTimeout','clentInformation','close',
+                        'closed','confirm','construclor','crypto','decodeURI','decodeURICompornent','defaultStatus','document','element','elements','embed','embeds',
+                        'encodeURI','encodeURIComponent','escape','event','fileUpload','focus','form','forms','frame','innerHeight','innerWidth','layer','layers','link',
+                        'location','mimeTypes','navigate','navigator','frames','frameRate','hidden','history','image','images','offscreenBuffering','open','opener','option',
+                        'outerHeight','outrWidth','packages','pageXOffset','pageYOffset','parent','parseFloat','parseInt','password','pks11','plugin','prompt','propertylsEnum',
+                        'radio','reset','screenX','screenY','scroll','secure','select','self','setinterval','setTimeout','status','submit','taint','text','textarea','top','unescape','untaint','window'
+        ];
+        var Areserved5=[
+                        'onblur','onclick','onerror','onfocus','onkeydown','onkeypress','onkeyup','onmouseover','onload','onmouseup','onmousedown','onsubmit'
+        ];
+      function CreateTable(ImportArray,id,num){
+           var Otable=document.getElementById(id);
+           var otr=document.createElement("tr");
+               Otable.appendChild(otr);
+           var j=1;
+           for(i=0;i<ImportArray.length;i++,j++){
+               var otd=document.createElement("td");
+                   otr.appendChild(otd);
+                   otd.innerHTML=ImportArray[i];
+                   if(j%num==0){
+                       otr=document.createElement("tr");
+                       Otable.appendChild(otr);
+                       j=0;
+                   }
+           }
+       }
+       CreateTable(Areserved,"Reserved",5);
+       CreateTable(Areserved2,"ObjectPropertyMethod",5)
+       CreateTable(Areserved3,"Java",6);
+       CreateTable(Areserved4,"window",5);
+       CreateTable(Areserved5,"HTML",6);
+   </script>
+</body>
+</html>]]></content>
+  </entry>
+  <entry>
+    <title>JavaScript验证API</title>
+    <url>/2020/03/03/JavaScript%E9%AA%8C%E8%AF%81API/</url>
+    <content><![CDATA[<p><strong>约束验证DOM方法</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">checkValidity()     如果input元素中的数据是合法的返回true，否则返回false</span><br><span class="line">setCustomVaidity()   设置input元素的validationMessage属性，用于自定义错误提示信息的方法</span><br><span class="line">                     使用setCustomVaidity设置了自定义提示后，validity.customError就会变成true，则checkValidity总是会返回false。如果要重新判断需要取消自定义提示，方式如下:</span><br><span class="line">                     setCustomVaidity(&#39;&#39;)</span><br><span class="line">                     setCustomVaidity(null)</span><br><span class="line">                     setCustomVaidity(undefined)</span><br></pre></td></tr></table></figure>
+<p>checkValidity()方法</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;input id&#x3D;&quot;id1&quot; type&#x3D;&quot;number&quot; min&#x3D;&quot;100&quot; max&#x3D;&quot;300&quot; required&gt;</span><br><span class="line">        &lt;button onclick&#x3D;&quot;myFunction()&quot;&gt;验证&lt;&#x2F;button&gt;</span><br><span class="line">        &lt;p id&#x3D;&quot;demo&quot;&gt;&lt;&#x2F;p&gt;</span><br><span class="line">        &lt;script&gt;</span><br><span class="line">            function myFunction()&#123;</span><br><span class="line">                var inpObj&#x3D;document.getElementById(&quot;id1&quot;);</span><br><span class="line">                if(inpObj.checkValidity()&#x3D;&#x3D;false)&#123;</span><br><span class="line">                    document.getElementById(&quot;demo&quot;).innerHTML&#x3D;inpObj.validationMessage;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &lt;&#x2F;script&gt; </span><br><span class="line">    &lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>约束验证DOM属性</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">validity            布尔属性值，返回input输入值是否合法</span><br><span class="line">validationMessage   浏览器错误提示信息</span><br><span class="line">willValidate        指定input是否需要验证</span><br></pre></td></tr></table></figure>
+<p><strong>Validity属性</strong><br>input元素的validity属性包含一系列勾玉validity数据属性</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">customError         设置为true,如果设置了自定义的validity信息</span><br><span class="line">patterMismatch      设置为true，如果元素的值不匹配它的模式属性</span><br><span class="line">rangeOverflow       设置为true,如果元素的值大于设置的最大值</span><br><span class="line">rangeUnderflow      设置为true，如果元素的值小于它的最小值</span><br><span class="line">stepMismatch        设置为true，如果元素的值不是按照规定的step属性设置</span><br><span class="line">toolong             设置为true，如果元素的值超过了maxlength属性设置的长度</span><br><span class="line">typeMismatch        设置为true，如果元素的值不是预期相匹配的类型</span><br><span class="line">valueMissing        设置为true，如果元素(required属性)没有值</span><br><span class="line">valid               设置为true，如果元素的值是合法的</span><br></pre></td></tr></table></figure>
+<p>如果输入的值大于100，显示一个信息<br>rangeOverflow属性</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;input id&#x3D;&quot;id1&quot; type&#x3D;&quot;number&quot; max&#x3D;&quot;100&quot;&gt;</span><br><span class="line">    &lt;button onclick&#x3D;&quot;myFunction()&quot;&gt;验证&lt;&#x2F;button&gt;</span><br><span class="line">    &lt;p id&#x3D;&quot;demo&quot;&gt;&lt;&#x2F;p&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">    function myFunction()&#123;</span><br><span class="line">        var text&#x3D;&quot;&quot;;</span><br><span class="line">        if(document.getElementById(&quot;id1&quot;).validity.rangeOverflow)&#123;</span><br><span class="line">            text&#x3D;&quot;输入的值太大了&quot;;</span><br><span class="line">        &#125;</span><br><span class="line">        document.getElementById(&quot;demo&quot;).innerHTML&#x3D;text;</span><br><span class="line">    &#125;</span><br><span class="line">    &lt;&#x2F;script&gt;</span><br><span class="line">&lt;&#x2F;input&gt;</span><br></pre></td></tr></table></figure>
+<p>如果输入的值小于100，显示一个信息<br>rangeUnderflow属性</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;input id&#x3D;&quot;id1&quot; type&#x3D;&quot;number&quot; min&#x3D;&quot;100&quot; required&gt;</span><br><span class="line">        &lt;button onclick&#x3D;&quot;myFunction()&quot;&gt;OK&lt;&#x2F;button&gt;</span><br><span class="line">        &lt;p id&#x3D;&quot;demo&quot;&gt;&lt;&#x2F;p&gt;</span><br><span class="line">    &lt;&#x2F;body&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        function myFunction()&#123;</span><br><span class="line">            var text&#x3D;&quot;&quot;;</span><br><span class="line">            var inpObj&#x3D;document.getElementById(&quot;id1&quot;);</span><br><span class="line">            if(!isNumeric(inpObj.value))&#123;</span><br><span class="line">                text&#x3D;&quot;输入的不是数字&quot;;</span><br><span class="line">            &#125;else if(inpObj.validity.rangUnderflow)&#123;</span><br><span class="line">                text&#x3D;&quot;输入的值太小&quot;;</span><br><span class="line">            &#125;else&#123;</span><br><span class="line">                text&#x3D;&quot;输入正确&quot;;</span><br><span class="line">            &#125;</span><br><span class="line">            document.getElementById(&quot;demo&quot;).innerHTML&#x3D;text;</span><br><span class="line">        &#125;</span><br><span class="line">        function isNumeric(n)&#123;</span><br><span class="line">            return !isNaN(parseFloat(n))&amp;&amp;isFinite(n);</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;&#x2F;script&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>JavaScript</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>JavaScript表单</title>
+    <url>/2020/03/02/JavaScript%E8%A1%A8%E5%8D%95/</url>
+    <content><![CDATA[<p><strong>JavaScript表单验证</strong><br>HTML表单验证可以通过JavaScript来完成<br>测试表单字段(fname)值是否存在，如果补偿装置，就弹出信息，阻止表单提交</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;form name&#x3D;&quot;test&quot; action&#x3D;&quot;demo_form.php&quot; onsubmit&quot;return val()&quot; method&#x3D;&quot;post&quot;&gt;</span><br><span class="line">        名字:&lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;fname&quot;&gt;</span><br><span class="line">        &lt;input type&#x3D;&quot;subimt&quot; value&#x3D;&quot;提交&quot;&gt;</span><br><span class="line">        &lt;&#x2F;form&gt;</span><br><span class="line">        &lt;script&gt;</span><br><span class="line">        function val()&#123;</span><br><span class="line">            var x&#x3D;document.forms[&quot;myForm&quot;][&quot;fname&quot;].value;</span><br><span class="line">            if(x&#x3D;&#x3D;null||x&#x3D;&#x3D;&quot;&quot;)&#123;</span><br><span class="line">                alert(&quot;需要输入名字&quot;);</span><br><span class="line">                return false;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        &lt;&#x2F;script&gt;</span><br><span class="line">    &lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<p><strong>JavaScript验证输入的数字</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;p&gt;请输入1到10之间的数字&lt;&#x2F;p&gt;</span><br><span class="line">        &lt;input id&#x3D;&quot;num&quot;&gt;</span><br><span class="line">        &lt;button type&#x3D;&quot;button&quot; onclick&#x3D;&quot;num()&quot;&gt;提交&lt;&#x2F;button&gt;</span><br><span class="line">        &lt;p id&#x3D;&quot;demo&quot;&gt;&lt;&#x2F;p&gt;</span><br><span class="line">        &lt;script&gt;</span><br><span class="line">        function num()&#123;</span><br><span class="line">            var x,text;</span><br><span class="line">            var x&#x3D;document.getElementById(&quot;num&quot;).value;</span><br><span class="line">            if(isNaN(x)||x&lt;1||x&gt;10)&#123;</span><br><span class="line">               text&#x3D;&quot;输入错误&quot;;</span><br><span class="line">            &#125;else&#123;</span><br><span class="line">                text&#x3D;&quot;输入正确&quot;;</span><br><span class="line">            &#125;</span><br><span class="line">            document.getElementById(&quot;demo&quot;).innerHTML&#x3D;text;</span><br><span class="line">        &#125;</span><br><span class="line">        &lt;&#x2F;script&gt;</span><br><span class="line">    &lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>HTML表单自动验证</strong><br>HMTL表单验证也可以通过浏览器来自动完成<br>如果表单字段的值为空，required属性会阻止表单提交</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;form action&#x3D;&quot;demo_form.php&quot; method&#x3D;&quot;post&quot;&gt;</span><br><span class="line">        &lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;fname&quot; required&#x3D;&quot;required&quot;&gt;</span><br><span class="line">        &lt;input type&#x3D;&quot;submit&quot; value&#x3D;&quot;提交&quot;&gt;</span><br><span class="line">    &lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>数据验证</strong><br>数据验证用于确保用于输入的数据时有效的<br>典型的数据验证有</p>
+<ul>
+<li>必需字段是否输入</li>
+<li>用户是否输入了合法的数据</li>
+<li>在数字字段是否输入了文本<br>大多数情况下，数据验证用于确保用户正确输入数据<br>数据验证可以使用不同方法来定义，并通过多种方法来调用<br>服务端数据验证是在数据提交到服务器上后再验证<br>客户端数据验证是在数据发送到服务器前，在浏览器上完成验证</li>
+</ul>
+<p><strong>HTML</strong><br>HTML新增了HTML表单的验证方式：约束验证<br>约束验证时表单被提交时浏览器用来实现验证的一种算法<br>HTML约束验证基于:</p>
+<ul>
+<li>HTML输入属性</li>
+<li>css伪类选择器</li>
+<li>DOM属性和方法</li>
+</ul>
+<p><strong>约束验证HTML输入属性</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">disabled    规定输入的元素不可用</span><br><span class="line">max         规定输入元素的最大值</span><br><span class="line">min         规定输入元素的最小值</span><br><span class="line">pattem      规定输入元素值的模式</span><br><span class="line">required    规定输入元素字段是必需的</span><br><span class="line">type        规定输入元素的类型</span><br></pre></td></tr></table></figure>
+<p><strong>约束验证css伪类选择器</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">disabled        选取属性为&quot;disabled&quot;属性的input元素</span><br><span class="line">invalid         选取无效的input元素</span><br><span class="line">optional        选择没有“required”属性的input元素</span><br><span class="line">reuired         选择有“required”属性的input元素</span><br><span class="line">vaild           选取有效值的input元素</span><br></pre></td></tr></table></figure>
+<p><strong>E-mail验证</strong><br>函数检查输入的数据是否符合电子邮件的基本语法<br>也就是说，输入的数据必须包含@符号和点好(.)。同时，@不可以是邮件地址的首字符，并且@之后需有至少一个点号</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;from name&#x3D;&quot;myform&quot; action&#x3D;&quot;demo-form.php&quot; onsubmit&#x3D;&quot;return validateForm();&quot; metho&#x3D;&quot;post&quot;&gt;</span><br><span class="line">        Email:&lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;email&quot;&gt;</span><br><span class="line">        &lt;input type&#x3D;&quot;submit&quot; value&#x3D;&quot;提交&quot;&gt;</span><br><span class="line">        &lt;&#x2F;from&gt;</span><br><span class="line">        &lt;script&gt;</span><br><span class="line">            function validateForm()&#123;</span><br><span class="line">                var x&#x3D;document.form[&quot;myform&quot;][&quot;email&quot;].value;</span><br><span class="line">                var atops&#x3D;x.indexOf(&quot;@&quot;);</span><br><span class="line">                var dotops&#x3D;x.lastIndexOf(&quot;.&quot;);</span><br><span class="line">                if(atops&lt;1||dotops&lt;atops+2||dotops+2&gt;x.length)&#123;</span><br><span class="line">                    alert(&quot;不是一个有效的Email地址&quot;);</span><br><span class="line">                    return false;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &lt;&#x2F;script&gt;</span><br><span class="line">    &lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>JavaScript</category>
+      </categories>
+  </entry>
+  <entry>
     <title>JavaScript使用误区</title>
     <url>/2020/03/02/JavaScript%E4%BD%BF%E7%94%A8%E8%AF%AF%E5%8C%BA/</url>
     <content><![CDATA[<p><strong>赋值运算符引用错误</strong><br>在JavaScript程序中如果在if条件语句中使用赋值运算符的等号(=)将会产生一个错误结果，正确的方法是使用比较运算符的两个等号(==)<br>if条件语句返回false因为x不等于6</p>
@@ -412,6 +599,7 @@ JavaScript中数组是一种特殊的对象类型<a id="more"></a></li>
     <script>
         window.onload=function(){
             var Otable=document.getElementById('Reserved');
+            console.log(Otable);
             var Areserved=[
                           'abstract','else','instanceof' ,'super', 'boolean', 'enum' ,'int', 'switch', 'break', 'export',
                           'interface', 'synchronized', 'byte', 'extends' ,'let' ,'this' ,'case' ,'false' ,'long',
