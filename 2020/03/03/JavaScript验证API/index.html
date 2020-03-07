@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="Personal blog">
 <meta property="og:description" content="约束验证DOM方法 123456checkValidity()     如果input元素中的数据是合法的返回true，否则返回falsesetCustomVaidity()   设置input元素的validationMessage属性，用于自定义错误提示信息的方法                     使用setCustomVaidity设置了自定义提示后，validity.customEr">
 <meta property="article:published_time" content="2020-03-03T09:52:50.557Z">
-<meta property="article:modified_time" content="2020-03-03T10:37:57.598Z">
+<meta property="article:modified_time" content="2020-03-07T08:25:04.867Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -355,6 +355,7 @@
       
         <p><strong>约束验证DOM方法</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">checkValidity()     如果input元素中的数据是合法的返回true，否则返回false</span><br><span class="line">setCustomVaidity()   设置input元素的validationMessage属性，用于自定义错误提示信息的方法</span><br><span class="line">                     使用setCustomVaidity设置了自定义提示后，validity.customError就会变成true，则checkValidity总是会返回false。如果要重新判断需要取消自定义提示，方式如下:</span><br><span class="line">                     setCustomVaidity(&#39;&#39;)</span><br><span class="line">                     setCustomVaidity(null)</span><br><span class="line">                     setCustomVaidity(undefined)</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <p>checkValidity()方法</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;input id&#x3D;&quot;id1&quot; type&#x3D;&quot;number&quot; min&#x3D;&quot;100&quot; max&#x3D;&quot;300&quot; required&gt;</span><br><span class="line">        &lt;button onclick&#x3D;&quot;myFunction()&quot;&gt;验证&lt;&#x2F;button&gt;</span><br><span class="line">        &lt;p id&#x3D;&quot;demo&quot;&gt;&lt;&#x2F;p&gt;</span><br><span class="line">        &lt;script&gt;</span><br><span class="line">            function myFunction()&#123;</span><br><span class="line">                var inpObj&#x3D;document.getElementById(&quot;id1&quot;);</span><br><span class="line">                if(inpObj.checkValidity()&#x3D;&#x3D;false)&#123;</span><br><span class="line">                    document.getElementById(&quot;demo&quot;).innerHTML&#x3D;inpObj.validationMessage;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &lt;&#x2F;script&gt; </span><br><span class="line">    &lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
 <p><strong>约束验证DOM属性</strong></p>
@@ -472,7 +473,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
