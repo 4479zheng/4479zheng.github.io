@@ -261,7 +261,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/14/JavaScript%20%E5%AD%97%E7%AC%A6%E4%B8%B2%EF%BC%88String%EF%BC%89%20%E5%AF%B9%E8%B1%A1/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/17/JavaScript%20%E6%B5%8B%E8%AF%95Prototype/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
@@ -280,7 +280,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/03/14/JavaScript%20%E5%AD%97%E7%AC%A6%E4%B8%B2%EF%BC%88String%EF%BC%89%20%E5%AF%B9%E8%B1%A1/" itemprop="url">JavaScript 字符串（String） 对象</a></h1>
+                <a class="post-title-link" href="/2020/03/17/JavaScript%20%E6%B5%8B%E8%AF%95Prototype/" itemprop="url">JavaScript 测试Prototype</a></h1>
         
 
         <div class="post-meta">
@@ -292,8 +292,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-14T17:04:09+08:00">
-                2020-03-14
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-17T15:39:43+08:00">
+                2020-03-17
               </time>
             
 
@@ -354,45 +354,964 @@
       
         
           
-            <p><strong>JavaScript字符串</strong><br>一个字符串用于存储一系列字符就像”firstname”<br>一个字符串可以使用单引号或双引号</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var carname &#x3D; &quot;Volvo&quot;;</span><br><span class="line">var carnaem &#x3D; &#39;Volvo&#39;;</span><br></pre></td></tr></table></figure>
-<p>使用位置(索引)可以访问字符串中如何的字符</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var character &#x3D; carname[7];</span><br></pre></td></tr></table></figure>
-<p>字符串的索引从零开始,所以字符串第一字符为[0],第二个字符为[1]</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var answer &#x3D; &quot;It&#39;s alright&quot;;</span><br><span class="line">var answer &#x3D; &#39;It is &quot;dog&quot;&#39;;</span><br><span class="line">var answer &#x3D; &quot;It is &#39;dog&#39;&quot;;</span><br></pre></td></tr></table></figure>
-<p>可以在字符串中使用转义字符()使用引号</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var answer &#x3D; &#39;It\&#39;s alright&#39;;</span><br><span class="line">var answer &#x3D; &quot;It is &quot;\dog\&quot; &quot;;</span><br></pre></td></tr></table></figure>
-<p><strong>字符串(String)</strong><br>字符串(String)使用长度属性length来计算字符串的长度</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;script&gt;</span><br><span class="line">            var txt &#x3D; &quot;Hello World!&quot;;</span><br><span class="line">            document.write(&quot;&lt;p&gt;&quot; + txt.length +&quot;&lt;&#x2F;p&gt;&quot;);</span><br><span class="line">            var txt &#x3D; &quot;ABLHGKFGKJUGUYVJH&quot;;</span><br><span class="line">            document.write(&quot;&lt;p&gt;&quot; + txt.length +&quot;&lt;&#x2F;p&gt;&quot;);</span><br><span class="line">        &lt;&#x2F;script&gt;</span><br><span class="line">    &lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
-<p><strong>在字符串中查找字符串</strong><br>字符串使用indexOf()来定位字符串中某一个指定的字符首次出现的位置</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">     &lt;body&gt;</span><br><span class="line">         &lt;p id&#x3D;&quot;p1&quot;&gt;Click the button to locate where &quot;locate&quot; first occurs.&lt;&#x2F;p&gt;</span><br><span class="line">         &lt;p id&#x3D;&quot;demo&quot;&gt;0&lt;&#x2F;p&gt;</span><br><span class="line">         &lt;button onclick&#x3D;&quot;myFunction()&quot;&gt;点击&lt;&#x2F;button&gt;</span><br><span class="line">         &lt;script&gt;</span><br><span class="line">             function myFunction()&#123;</span><br><span class="line">                 var str &#x3D; document.getElementById(&quot;p1&quot;).innerHTML;</span><br><span class="line">                 var n &#x3D; str.indexOf(&quot;locate&quot;);</span><br><span class="line">                 document.getElementById(&quot;demo&quot;).innerHTML &#x3D; n+1;</span><br><span class="line">             &#125;</span><br><span class="line">         &lt;&#x2F;script&gt;</span><br><span class="line">     &lt;&#x2F;body&gt;</span><br><span class="line"> &lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
-<p>如果没找到对应的字符函数返回-1<br>lastIndexOf()方法在字符串末尾开始查找字符串出现的位置<br><strong>内容匹配</strong><br>match()函数用来查找字符串中特定的字符,并且如果找到的话，则返回这个字符</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;script&gt;</span><br><span class="line">            var txt &#x3D; &quot;Hello World!&quot;;</span><br><span class="line">            document.write(str.match(&quot;world&quot;)+&quot;&lt;br&gt;&quot;);</span><br><span class="line">            document.write(str.match(&quot;World&quot;)+&quot;&lt;br&gt;&quot;);</span><br><span class="line">            document.write(str.match(&quot;world!&quot;)&quot;);</span><br><span class="line">        &lt;&#x2F;script&gt;</span><br><span class="line">    &lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
-<p><strong>替换内容</strong><br>replace()方法在字符串中用某些字符替换另一些字符</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;p&gt;替换&quot;John&quot;为&quot;Mark&quot;&lt;&#x2F;p&gt;</span><br><span class="line">        &lt;button onclick&#x3D;&quot;myFunction()&quot;&gt;点击&lt;&#x2F;button&gt;</span><br><span class="line">        &lt;p id&#x3D;&quot;demo&quot;&gt;John&lt;&#x2F;p&gt;</span><br><span class="line">        &lt;script&gt;</span><br><span class="line">           function myFunction()&#123;</span><br><span class="line">               var str &#x3D; document.getElementById(&quot;demo&quot;).innerHTML;</span><br><span class="line">               var txt &#x3D; str.replace(&quot;John&quot;,&quot;Mark&quot;);</span><br><span class="line">               document.getElementById(&quot;demo&quot;).innerHTML &#x3D; txt;</span><br><span class="line">           &#125;</span><br><span class="line">        &lt;&#x2F;script&gt;</span><br><span class="line">    &lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
-<p><strong>字符串大小写转换</strong><br>字符串大写转换使用函数toUpperCase()/toLowerCase()</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;script&gt;</span><br><span class="line">            var txt &#x3D; &quot;Hello World!&quot;;</span><br><span class="line">            document.write(&quot;&lt;p&gt;&quot;+txt.toUpperCase()+&quot;&lt;&#x2F;p&gt;&quot;);</span><br><span class="line">            document.write(&quot;&lt;p&gt;&quot;+txt.toLowerCase()+&quot;&lt;&#x2F;p&gt;&quot;);</span><br><span class="line">            document.write(&quot;&lt;p&gt;&quot;+txt+&quot;&lt;&#x2F;p&gt;&quot;);</span><br><span class="line">        &lt;&#x2F;script&gt;</span><br><span class="line">        &lt;p&gt;该方法返回一个新的字符串,源字符串没有被改变&lt;&#x2F;p&gt;</span><br><span class="line">    &lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
-<p><strong>特殊字符</strong><br>JavaScript中可以使用反斜线()插入特殊符号<br>反斜线转义特殊字符 单引号(&#39;) 双引号(&quot;) 斜杠(\) 换行(\n) 回车(\r) tab(\t) 空格(\b) 换页(\f)<br><strong>字符串属性和方法</strong><br>属性</p>
+            <p><strong>引用Prototype</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;script src&#x3D;&quot;https:&#x2F;&#x2F;cdn.staticfile.org&#x2F;prototype&#x2F;1.7.3&#x2F;prototype.min.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">    &lt;body&gt;&lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>Prototype描述</strong><br>Prototype提供的函数可使HTML DOM编程更容易<br>与jQuery类似，Prototype也有自己的$()函数<br>$()函数接受HTML DOM 元素的id值(或DOM元素),并会向DOM对象添加新的功能<br>与jQuery不同，Prototype没有用以取代window.onload()的ready()方法，相反，Prototype会向浏览器及HTML DOM添加扩展<br>在JavaScript中，可以分配一个函数以处理窗口加载事件<br>JavaScript方式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function myFunction()&#123;</span><br><span class="line">    var obj &#x3D; document.getElementById(&quot;demo&quot;);</span><br><span class="line">    obj.innerHTML &#x3D; &quot;Hello world&quot;;</span><br><span class="line">&#125;</span><br><span class="line">onload&#x3D;myFunction;</span><br></pre></td></tr></table></figure>
+<p>等价的Prototype是不同的</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">function myFunction()&#123;</span><br><span class="line">    $(&quot;demo&quot;).insert(&quot;Hello world&quot;);</span><br><span class="line">&#125;</span><br><span class="line">Event.observe(window,&quot;load&quot;,myFuntion);</span><br></pre></td></tr></table></figure>
+<p>Event.observe()接受三个参数</p>
 <ul>
-<li>length</li>
+<li>希望处理的HTML DOM 或 BOM(浏览器对象模式)对象</li>
+<li>希望处理的事件</li>
+<li>希望调用的函数</li>
+</ul>
+<p><strong>测试Prototype</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;script src&#x3D;&quot;https:&#x2F;&#x2F;cdn.staticfile.org&#x2F;prototype&#x2F;1.7.3&#x2F;prototype.min.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        function myFunction()&#123;</span><br><span class="line">            $(&quot;demo&quot;).insert(&quot;Hello world&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">        Event.observe(window,&quot;load&quot;,myFunction);</span><br><span class="line">    &lt;&#x2F;script&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;h id&#x3D;&quot;demo&quot;&gt;&lt;&#x2F;h&gt;</span><br><span class="line">    &lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;script src&#x3D;&quot;https:&#x2F;&#x2F;cdn.staticfile.org&#x2F;prototype&#x2F;1.7.3&#x2F;prototype.min.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        function myFunction()&#123;</span><br><span class="line">            $(&quot;demo&quot;).writeAttribute(&quot;style&quot;,&quot;color:red&quot;).insert(&quot;Hello world&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">        Event.observe(window,&quot;load&quot;,myFunction);</span><br><span class="line">    &lt;&#x2F;script&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;h id&#x3D;&quot;demo&quot;&gt;&lt;&#x2F;h&gt;</span><br><span class="line">    &lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
+<p>与jQuery相同，prototype允许链式语法</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/17/JavaScript%20%E6%B5%8B%E8%AF%95jQuery/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Personal blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/17/JavaScript%20%E6%B5%8B%E8%AF%95jQuery/" itemprop="url">JavaScript 测试jQuery</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-17T15:22:01+08:00">
+                2020-03-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><strong>引用jQuery</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;script src&#x3D;&quot;https:&#x2F;&#x2F;cdn.staticfile.org&#x2F;jquery&#x2F;1.8.3&#x2F;jquery.min.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">    &lt;body&gt;&lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>jQuery描述</strong><br>主要的jQuery函数是$()函数，如果向该函数传递DOM对象,它会返回jQuery对象，带有向其添加的jQuery功能<br>jQuery允许通过CSS选择器来选取元素<br>在JavaScript中,可以分配一个函数以处理窗口加载事件<br>JavaScript方式:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function myFunction()&#123;</span><br><span class="line">    var obj &#x3D; document.getElementById(&quot;demo&quot;);</span><br><span class="line">    obj.innerHTML &#x3D; &quot;Hello world&quot;;</span><br><span class="line">&#125;</span><br><span class="line">onload&#x3D;myFunction;</span><br></pre></td></tr></table></figure>
+<p>等价的jQuery是不同的:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">function myFunction()&#123;</span><br><span class="line">    $(&quot;#demo&quot;).html(&quot;Hello world&quot;);</span><br><span class="line">&#125;</span><br><span class="line">$(document).ready(myFunction);</span><br></pre></td></tr></table></figure>
+<p>$(document).ready(myFunction),表示HTML DOM文档对象被传递到jQuery:$(document)<br>当向jQuery传递DOM对象时，jQuery会返回以HTML DOM对象包装的jQuery对象<br>jQuery函数会返回新的jQuery对象,其中的ready()是一个方法<br>由于在JavaScript中函数就是变量，因此可以把myFunction作为变量传递给jQuery的ready方法<br><strong>测试jQuery</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;script src&#x3D;&quot;https:&#x2F;&#x2F;cdn.staticfile.org&#x2F;jquery&#x2F;1.8.3&#x2F;jquery.min.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        function myFunction()&#123;</span><br><span class="line">            $(&quot;#demo&quot;).html(&quot;Hello world&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">        $(document).ready(myFunction);</span><br><span class="line">    &lt;&#x2F;script&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;p id&#x3D;&quot;demo&quot;&gt;&lt;&#x2F;p&gt;</span><br><span class="line">    &lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;script src&#x3D;&quot;https:&#x2F;&#x2F;cdn.staticfile.org&#x2F;jquery&#x2F;1.8.3&#x2F;jquery.min.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        function myFunction()&#123;</span><br><span class="line">            $(&quot;#demo&quot;).attr(&quot;style&quot;,&quot;color:red&quot;).html(&quot;Hello world&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">        $(document).ready(myFunction);</span><br><span class="line">    &lt;&#x2F;script&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;p id&#x3D;&quot;demo&quot;&gt;&lt;&#x2F;p&gt;</span><br><span class="line">    &lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
+<p>jQuery允许连接(链式语法)<br>链接(Chaining)是一种在同一对象上执行多个任务的便捷方法</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/16/JavaScript%20%E5%BA%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Personal blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/16/JavaScript%20%E5%BA%93/" itemprop="url">JavaScript 库</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-16T21:57:27+08:00">
+                2020-03-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><strong>JavaScript框架(库)</strong><br>JavaScript高级程序设计（特别是对于浏览器差异得复杂处理），同茶馆很困难也很耗时<br>为了应对这些调整，许多的JavaScript（helper）库应运而生<br>这些JavaScript库常被成为JavaScript框架<br>广受欢迎的JavaScript框架</p>
+<ul>
+<li>jQuery</li>
 <li>prototype</li>
-<li>constructor<br>方法</li>
-<li>charAt()</li>
-<li>charCodeAt()</li>
-<li>concat()</li>
-<li>fromCharCode()</li>
-<li>indexOf()</li>
-<li>lastIndexOf()</li>
-<li>match()</li>
-<li>replace()</li>
-<li>search()</li>
-<li>slice()</li>
-<li>split()</li>
-<li>substr()</li>
-<li>substring()</li>
-<li>toLowerCase()</li>
-<li>toUpperCase()</li>
-<li>valueOf()</li>
+<li>MooTools<br>所有这些框架都提供针对常见JavaScript任务函数，包括动画、DOM操作以及Ajax处理</li>
+</ul>
+<p><strong>JQuery</strong><br>jQuery使用css选择器来访问和操作网页上的HTML元素(DOM对象)<br>jQuery同时提供companion UI(用户界面)和插件<br><strong>Prototype</strong><br>Prototype是一种库，提供用于执行常见web任务的简单API<br>API是应用程序编程接口（Application Programming Interface）的缩写，它是包含属性和方法的库，用于操作HTML DOM<br>Prototype通过提供类和继承，实现对JavaScript的增强<br><strong>MooTools</strong><br>MooTooks也是有个框架，提供了可使常见的JavaScript编程更为简单的API<br>MooTools也含有一些轻量级的效果和动画函数<br><strong>其他框架</strong><br>框架：<br>YUI -Yahoo!User Interface Framework,涵盖大量函数的大型库，从简单的JavaScript功能到完成的Internet widget<br>Ext JS -可定制的widget，用于关键富因特网应用程序<br>Dojo -用于DOM操作、事件、widget等的工具包<br>script.aculo.us 开源的JavaScript框架，针对可视效果和界面行为<br>UIZE - Widget、AJAX、DOM、模板等<br><strong>CDN-内容分发网络</strong><br>CDN是包含可分享代码库的服务网络</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/16/JavaScript%20Cookie/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Personal blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/16/JavaScript%20Cookie/" itemprop="url">JavaScript Cookie</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-16T20:36:40+08:00">
+                2020-03-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Cookie用于存储web页面的用户信息<br><strong>Cookie</strong><br>Cookie是一些数据,存储于电脑的文本文件中<br>当web服务器向浏览器发送web页面时，在连接关闭后，服务端不会记录用户的信息<br>Cookie的作用就是用于解决“如何记录客户端的用户信息”</p>
+<ul>
+<li>当用户访问web页面时，用户信息可以记录在cookie中</li>
+<li>在用户下次访问页面时，可以在cookie中读取用户访问记录<br>Cookie以名/值对形式存储<br>username = John Doe<br>当浏览器从服务器请求web页面时，属于该页面的cookie会被添加到该请求中，服务端通过这方式获取用户的信息</li>
+</ul>
+<p><strong>使用JavaScript创建Cookie</strong><br>JavaScript可以属于doucument.cookie属性来创建、读取、以及删除cookie</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">JavaScript中，创建cookie</span><br><span class="line">    document.cookie &#x3D; &quot;username &#x3D; John&quot;;</span><br><span class="line">还可以为cookie添加一个过期时间(以UTC或GMT时间),默认情况下，cookie在浏览器关闭时删除</span><br><span class="line">    document.cookie &#x3D; &quot;username &#x3D; John; expires&#x3D;Thu,18 Dec 2043 12:00:00 GMT&quot;;</span><br><span class="line">可以使用path参数告诉浏览器cookie的路径，默认情况下，cookie属于当前页面</span><br><span class="line">    document.cookie &#x3D; &quot;usename&#x3D;John;expires&#x3D;Thu,18 Dec 2043 12:00:00 GMT;path&#x3D;&#x2F;&quot;</span><br></pre></td></tr></table></figure>
+<p><strong>使用JavaScript读取Cookie</strong><br>在JavaScript中，使用以下代码读取cookie</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var x &#x3D; document.cookie;</span><br></pre></td></tr></table></figure>
+<p>document.cookie将以字符串的方式返回所有的cookie，类型格式:cookie1=value;…..<br><strong>使用JavaScript修改Cookie</strong><br>在JavaScript中，修改cookie类似于创建cookie</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">document.cookie&#x3D;&quot;username&#x3D;John;expires&#x3D;Thu,18 Dec 2043 12:00:00 GMT; path&#x3D;&#x2F;&quot;;</span><br></pre></td></tr></table></figure>
+<p><strong>使用JavaScript删除cookie</strong><br>删除cookie只需要设置expires参数为以前的时间即可</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">document.cookie &#x3D; &quot;username&#x3D;;expires&#x3D;Thu,01 Jan 1970 00:00:00 GMT&quot;;</span><br></pre></td></tr></table></figure>
+<p>当删除时不必指定cookie的值<br><strong>Cookie字符串</strong><br>document.cookie属性看起来像一个普通的文本字符串<br>即使在document.cookie中写入一个完整的cookie字符串，当重新读取该cookie信息时，cookie信息时以名/值对的形式展示的<br>如果设置了新的cookie，旧的不会被覆盖，新cookie将添加到document.cookie中，所有如果重新读取document.cookie将获取到如下所示的数据<br>cookie1 = value;cookie2 = value;<br>如果需要查找一个指定的cookie值，就必须创建一个JavaScript函数在cookie字符串中查到cookie值<br><strong>JavaScript Cookie实例</strong><br>在以下实例中，将创建cookie来存储访问者名称<br>首先，访问者访问web页面，被要求填写自己的名字，该名字会存储到cookie中<br>访问者下次访问页面时，就会看到也该欢迎的消息<br>在实例中创建3个JavaScript函数<br>    设置cookie值的函数<br>    获取cookie值得函数<br>    检测cookie值得函数<br><strong>设置cookie值得函数</strong><br>首先，创建一个函数用于存储访问者得名字</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function setCookie(cname,cvalue,exdats)&#123;</span><br><span class="line">    var d &#x3D; new Date();</span><br><span class="line">    d.setTime(d.getTime()+(exdays*24*60*60*1000));</span><br><span class="line">    var expires &#x3D; &quot;expires&#x3D;&quot;+d.toGMTString();</span><br><span class="line">    document.cookie &#x3D; cname + &quot;&#x3D;&quot; +cvalue +&quot;;&quot;+expires;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>cookie 得名称为cname,cookie的值为cvalue，并设置了cookie的过期时间expries<br>该函数设置了cookie名、cookie值、cookie过期时间<br><strong>获取cookie值得函数</strong><br>然后,创建有个函数用户返回指定cookie得值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function getCookie(cname)&#123;</span><br><span class="line">    var name &#x3D; cname + &quot;&#x3D;&quot;;</span><br><span class="line">    var ca &#x3D; document.cookie.split(&quot;,&quot;);</span><br><span class="line">    for (var i&#x3D;0;i&lt;ca.length;i++)&#123;</span><br><span class="line">        var c &#x3D; ca[i].trim();</span><br><span class="line">        if(c.indexOf(name)&#x3D;&#x3D;0)return c.substring(name.length,c.length);</span><br><span class="line">    &#125;</span><br><span class="line">    return &quot;&quot;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>cookie名得参数为cname<br>创建有个文本变量用于检索指定cookie:cname+”=”<br>使用分号来分隔document.cookie字符串并将分割后的字符串数组赋值给ca(ca=document.cookie.split(“,”))<br>循环ca数组(i=0;i&lt;ca.length;i++),然后读取数组中的每个值,并去除前后空格(c=ca[i].tirm())<br>如果找到cookie(c.indexOf(name)==0),返回cookie的值(c.substring(name.length,c.length))<br>如果没有找到cookie,返回””<br><strong>检测cookie值得函数</strong><br>最后,可以创建也该检测cookie是否创建得函数<br>如果设置了cookie，将显示有个问候信息<br>如果没有设置cookie,将会显示有个弹窗用于询问访问者得名字,并调用setCookie函数将访问者得名字存储365；</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function checkCookie()&#123;</span><br><span class="line">    var username&#x3D;getCookie(&quot;username&quot;);</span><br><span class="line">    if(username!&#x3D;&quot;&quot;)&#123;</span><br><span class="line">        alert(&quot;Welcome again&quot;+username);</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        username &#x3D; prompt(&quot;Please enter your name&quot;,&quot;&quot;);</span><br><span class="line">        if(username!&#x3D;&quot;&quot;&amp;&amp;username!&#x3D;null)&#123;</span><br><span class="line">            setCookie(&quot;username&quot;,username,365);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>实例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">    function setCookie(cname,cvalue,exdays)&#123;</span><br><span class="line">        var d &#x3D; new Date();</span><br><span class="line">        d.setTime(d.getTime()+(exdays*24*60*60*1000));</span><br><span class="line">        var expires &#x3D; &quot;expires&#x3D;&quot;+d.toGMTString();</span><br><span class="line">        document.cookie &#x3D; cname + &quot;&#x3D;&quot; +cvalue +&quot;;&quot;+expires;</span><br><span class="line">    &#125;</span><br><span class="line">    function getCookie(cname)&#123;</span><br><span class="line">        var name &#x3D; cname + &quot;&#x3D;&quot;;</span><br><span class="line">        var ca &#x3D; document.cookie.split(&quot;;&quot;);</span><br><span class="line">        for (var i&#x3D;0;i&lt;ca.length;i++)&#123;</span><br><span class="line">        var c &#x3D; ca[i].trim();</span><br><span class="line">            if(c.indexOf(name)&#x3D;&#x3D;0)return c.substring(name.length,c.length);</span><br><span class="line">        &#125;</span><br><span class="line">        return &quot;&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">    function checkCookie()&#123;</span><br><span class="line">        var username&#x3D;getCookie(&quot;username&quot;);</span><br><span class="line">        if(username!&#x3D;&quot;&quot;)&#123;</span><br><span class="line">            alert(&quot;Welcome again&quot;+username);</span><br><span class="line">        &#125;else&#123;</span><br><span class="line">            username &#x3D; prompt(&quot;Please enter your name&quot;,&quot;&quot;);</span><br><span class="line">            if(username!&#x3D;&quot;&quot;&amp;&amp;username!&#x3D;null)&#123;</span><br><span class="line">                setCookie(&quot;username&quot;,username,365);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    &lt;&#x2F;script&gt;</span><br><span class="line">    &lt;body onload&#x3D;&quot;checkCookie()&quot;&gt;</span><br><span class="line">    &lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/16/JavaScript%20%E8%AE%A1%E6%97%B6%E4%BA%8B%E4%BB%B6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Personal blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/16/JavaScript%20%E8%AE%A1%E6%97%B6%E4%BA%8B%E4%BB%B6/" itemprop="url">JavaScript 计时事件</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-16T19:49:58+08:00">
+                2020-03-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><strong>Javascript计时事件</strong><br>通过使用JavaScript，设计一个时间间隔之后来执行代码,而不是在函数被调用后立即执行，这就时计时事件<br>在JavaScript中使用计时事件，两个关键方法是：</p>
+<ul>
+<li>setInterval()间隔指定的毫秒数不停地执行指定地代码</li>
+<li>setTimeout()在指定地毫秒数后执行指定代码<br>setInterval()和setTimeout()是HTML DOM Window对象的两个方法</li>
+</ul>
+<p><strong>setInterval()方法</strong><br>setInterval()间隔指定的毫秒数不停地执行指定地代码<br>语法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">window.setInterval(&quot;javascript function&quot;,milliseconds);</span><br></pre></td></tr></table></figure>
+<p>window.setInterval()方法可以不适用window前缀,直接使用函数setInterval()<br>setInterval()第一个参数是函数(function)<br>第二个参数间隔的毫秒数<br>1000毫秒是1秒</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;p&gt;单击按钮每3秒出现一个&quot;Hello&quot;警告框&lt;&#x2F;p&gt;</span><br><span class="line">        &lt;p&gt;再次点击警告框，经过3秒出现新的就警告框，这将一直执行&lt;&#x2F;p&gt;</span><br><span class="line">        &lt;button onclick&#x3D;&quot;myFunction()&quot;&gt;点击&lt;&#x2F;button&gt;</span><br><span class="line">        &lt;script&gt;</span><br><span class="line">            function myFunction()&#123;</span><br><span class="line">                setInterval(function()&#123;</span><br><span class="line">                    alert(&quot;Hello&quot;)</span><br><span class="line">                &#125;3000);</span><br><span class="line">            &#125;</span><br><span class="line">        &lt;&#x2F;script&gt;</span><br><span class="line">    &lt;&#x2F;body&gt;</span><br><span class="line">&lt;html&gt;</span><br></pre></td></tr></table></figure>
+<p>显示当前时间</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;p id&#x3D;&quot;demo&quot;&gt;&lt;&#x2F;p&gt;</span><br><span class="line">        &lt;script&gt;</span><br><span class="line">            function myFunction()&#123;</span><br><span class="line">              var d &#x3D; new Date();</span><br><span class="line">              var t &#x3D; d.toLocaleTimeString();</span><br><span class="line">              document.getElementById(&quot;demo&quot;).innerHTML &#x3D; t;</span><br><span class="line">            &#125;</span><br><span class="line">            var myTime &#x3D; setInterval(function()&#123;</span><br><span class="line">                myFunction()&#125;,1000);</span><br><span class="line">        &lt;&#x2F;script&gt;</span><br><span class="line">    &lt;&#x2F;body&gt;</span><br><span class="line">&lt;html&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>clearInterval()</strong><br>clearInterval()方法用于停止setInterval()方法执行函数代码<br>语法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">window.clearInterval(intervalVariable)</span><br></pre></td></tr></table></figure>
+<p>window.clearInterval()方法可以不使用前缀window，直接使用函数clearInterval()<br>要使用clearInterval()方法，在创建计时方法是必须使用全局变量</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">myVar &#x3D; setInterval(&quot;Javascript function&quot;,milliseconds);</span><br></pre></td></tr></table></figure>
+<p>然后可以使用clearInterval()方法来停止执行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">     &lt;body&gt;</span><br><span class="line">         &lt;p id&#x3D;&quot;demo&quot;&gt;&lt;&#x2F;p&gt;</span><br><span class="line">         &lt;button onclick&#x3D;&quot;Stop()&quot;&gt;停止&lt;&#x2F;button&gt;</span><br><span class="line">         &lt;script&gt;</span><br><span class="line">             function myFunction()&#123;</span><br><span class="line">               var d &#x3D; new Date();</span><br><span class="line">               var t &#x3D; d.toLocaleTimeString();</span><br><span class="line">               document.getElementById(&quot;demo&quot;).innerHTML &#x3D; t;</span><br><span class="line">             &#125;</span><br><span class="line">             var myTime &#x3D; setInterval(function()&#123;</span><br><span class="line">                 myFunction()&#125;,1000);</span><br><span class="line">             var Stop&#x3D; function()&#123;</span><br><span class="line">		clearInterval(myTime);</span><br><span class="line">	&#125;</span><br><span class="line">         &lt;&#x2F;script&gt;</span><br><span class="line">     &lt;&#x2F;body&gt;</span><br><span class="line"> &lt;html&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>setTimeout()方法</strong><br>语法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">myVar &#x3D; window.setTimeout(&quot;javascript function&quot;,milliseconds);</span><br></pre></td></tr></table></figure>
+<p>setTimeout()方法会返回某个值,在上面的语句中，值被存储在名为myVar变量中，如果要取消这个setTimeout(),可以使用这个变量名来指定它<br>setTimeout()的第一个参数是函数JavaScript语句的字符串<br>第二个参数指示从当前起多少毫秒后执行第一个参数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;p&gt;点击按钮,等待3秒后弹出&quot;Hello&quot;警告框&lt;&#x2F;p&gt;</span><br><span class="line">        &lt;button onclick&#x3D;&quot;myFunction()&quot;&gt;点击&lt;&#x2F;button&gt;</span><br><span class="line">        &lt;script&gt;</span><br><span class="line">            function myFunction()&#123;</span><br><span class="line">              setTimeout(function()&#123;alert(&quot;Hello&quot;)&#125;,3000);</span><br><span class="line">            &#125;</span><br><span class="line">        &lt;&#x2F;script&gt;</span><br><span class="line">    &lt;&#x2F;body&gt;</span><br><span class="line">&lt;html&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>clearTimeout()方法</strong><br>clearTimeout()方法用于停止执行setTimeout()方法的函数代码<br>语法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">window.clearTimeout(timeoutVariable)</span><br></pre></td></tr></table></figure>
+<p>window.clearTimeout()方法可以不使用window前缀<br>要使用clearTimeout()方法，必须在创建超时方法中(setTimeout)使用全局变量</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">myVar &#x3D; setTimeout(&quot;javascript function&quot;,milliseconds);</span><br></pre></td></tr></table></figure>
+<p>如果函数还未被执行，可以使用clearTimeout()方法来停止执行函数代码</p>
+<pre><code>&lt;html&gt;
+    &lt;body&gt;
+        &lt;p&gt;点击按钮,等待3秒后弹出&quot;Hello&quot;警告框&lt;/p&gt;
+        &lt;button onclick=&quot;myFunction()&quot;&gt;点击&lt;/button&gt;
+        &lt;button onclick=&quot;stop()&quot;&gt;停止&lt;/button&gt;
+        &lt;script&gt;
+            var myVar;
+            function myFunction(){
+              myVar=setTimeout(function(){alert(&quot;Hello&quot;)},3000);
+            }
+            function stop(){
+                clearTimeout(myFunction);
+            }
+        &lt;/script&gt;
+    &lt;/body&gt;
+&lt;html&gt;</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/16/JavaScript%20%E5%BC%B9%E7%AA%97/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Personal blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/16/JavaScript%20%E5%BC%B9%E7%AA%97/" itemprop="url">JavaScript 弹窗</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-16T16:24:53+08:00">
+                2020-03-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><strong>警告框</strong><br>警告框经常用于确保用户可用得到某些信息<br>当警告框出现后，需要点击确定按钮才能继续进行操作<br>语法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">window.alert(&quot;Sometext&quot;);</span><br></pre></td></tr></table></figure>
+<p>window.alert()方法可以不带上window对象，直接使用alert()方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;button onclick&#x3D;&quot;myFunction()&quot;&gt;点击显示警告框&lt;&#x2F;buttom&gt;</span><br><span class="line">        &lt;script&gt;</span><br><span class="line">            function myFunction()&#123;</span><br><span class="line">                alert(&quot;警告框&quot;);</span><br><span class="line">            &#125;</span><br><span class="line">        &lt;&#x2F;script&gt;</span><br><span class="line">    &lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>确认框</strong><br>确定框常用于验证是否接收用户操作<br>当确定卡弹出时,用户可以点击”确认”或者”取消”来确定用户操作<br>当你点击”确认”,确认框返回true,如果点击”取消”,确认框返回false<br>语法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">window.confirm(&quot;sometext&quot;);</span><br></pre></td></tr></table></figure>
+<p>window.confirm()方法可以不带上window对象，直接使用confirm()方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;button onclick&#x3D;&quot;myFunction()&quot;&gt;点击显示确认框&lt;&#x2F;buttom&gt;</span><br><span class="line">        &lt;script&gt;</span><br><span class="line">            function myFunction()&#123;</span><br><span class="line">               var x;</span><br><span class="line">               var r &#x3D; confirm(&quot;按下按钮&quot;);</span><br><span class="line">               if(r &#x3D;&#x3D; true)&#123;</span><br><span class="line">                   x &#x3D;&quot;按下确定按钮&quot;;</span><br><span class="line">               &#125;else&#123;</span><br><span class="line">                   x &#x3D;&quot;按下取消按钮&quot;;</span><br><span class="line">               &#125;</span><br><span class="line">               document.getElementById(&quot;demo&quot;).innerHTML &#x3D; x;</span><br><span class="line">            &#125;</span><br><span class="line">        &lt;&#x2F;script&gt;</span><br><span class="line">    &lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>提示框</strong><br>提示框经常用于提示用户在进入页面前输入某个值<br>当提示框出现后，用户需要输入某个值，然后确定或取消按钮才能进行操作<br>如果用户点击确认,那么返回值为输入的值。如果用户点击取消，那么返回值为null<br>语法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">window.prompt(&quot;sometext&quot;,&quot;defaultvalue&quot;);</span><br></pre></td></tr></table></figure>
+<p>window.prompt()方法可以不带上window对象，直接使用prompt()方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;button onclick&#x3D;&quot;myFunction()&quot;&gt;点击输入的对话框&lt;&#x2F;button&gt;</span><br><span class="line">        &lt;p id&#x3D;&quot;demo&quot;&gt;&lt;&#x2F;p&gt;</span><br><span class="line">        &lt;script&gt;</span><br><span class="line">            function myFunction()&#123;</span><br><span class="line">                var x;</span><br><span class="line">                var person &#x3D; prompt(&quot;你输入你的年龄&quot;,&quot;18&quot;);</span><br><span class="line">                if(person!&#x3D;null&amp;&amp;person!&#x3D;&quot;&quot;)&#123;</span><br><span class="line">                    x&#x3D;&quot;你的年龄&quot;+person;</span><br><span class="line">                    document.getElementById(&quot;demo&quot;).innerHTML&#x3D;x;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &lt;&#x2F;script&gt;</span><br><span class="line">    &lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/16/JavaScript%20Window%20Navigator/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Personal blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/16/JavaScript%20Window%20Navigator/" itemprop="url">JavaScript Window Navigator</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-16T16:14:31+08:00">
+                2020-03-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><strong>Window Navigator</strong><br>window.navigator对象在编写时可不使用window这个前缀</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;div id&#x3D;&quot;demo&quot;&gt;&lt;&#x2F;div&gt;</span><br><span class="line">        &lt;script&gt;</span><br><span class="line">            txt &#x3D; &quot;&lt;p&gt;浏览器代号&quot;+navigator.appCodeName+&quot;&lt;&#x2F;p&gt;&quot;;</span><br><span class="line">            txt +&#x3D; &quot;&lt;p&gt;浏览器名称&quot;+navigator.appName+&quot;&lt;&#x2F;p&gt;&quot;;</span><br><span class="line">            txt +&#x3D; &quot;&lt;p&gt;浏览器版本&quot;+navigator.appVersion+&quot;&lt;&#x2F;p&gt;&quot;;</span><br><span class="line">            txt +&#x3D; &quot;&lt;p&gt;启用Cookies&quot;+navigator.cookieEnabled+&quot;&lt;&#x2F;p&gt;&quot;;</span><br><span class="line">            txt +&#x3D; &quot;&lt;p&gt;硬件平台&quot;+navigator.platform+&quot;&lt;&#x2F;p&gt;&quot;;</span><br><span class="line">            txt +&#x3D; &quot;&lt;p&gt;用户代理&quot;+navigator.uerAgent+&quot;&lt;&#x2F;p&gt;&quot;;</span><br><span class="line">            txt +&#x3D;&quot;&lt;p&gt;用户代理语言&quot;+navigator.systemLanguage+&quot;&lt;&#x2F;p&gt;&quot;;</span><br><span class="line">            document.getElementById(&quot;demo&quot;).innerHTML &#x3D; txt;</span><br><span class="line">        &lt;&#x2F;script&gt;</span><br><span class="line">    &lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
+<p>navigator对象的信息具有误导性,不应该被用于检测浏览器版本</p>
+<ul>
+<li>navigator数据拷贝浏览器使用者更改</li>
+<li>一些浏览器对测试站点会识别错误</li>
+<li>浏览器无法报告晚于浏览器发布的新操作系统</li>
 </ul>
 
           
@@ -442,7 +1361,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/14/JavaScript%20Number%E5%AF%B9%E8%B1%A1/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/16/JavaScript%20Window%20History/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
@@ -461,7 +1380,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/03/14/JavaScript%20Number%E5%AF%B9%E8%B1%A1/" itemprop="url">JavaScript Number对象</a></h1>
+                <a class="post-title-link" href="/2020/03/16/JavaScript%20Window%20History/" itemprop="url">JavaScript Window History</a></h1>
         
 
         <div class="post-meta">
@@ -473,304 +1392,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-14T16:09:02+08:00">
-                2020-03-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaScript</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><strong>JavaScript数字</strong><br>JavaScript数字可以使用也可以不适用小数点来书写</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var pi &#x3D; 3.14;  使用小数点</span><br><span class="line">var x &#x3D; 34;     不使用小数点</span><br></pre></td></tr></table></figure>
-<p>极大或极小的数字可通过科学(指数)计数法来写</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var y &#x3D; 123e5;  12300000</span><br><span class="line">var z &#x3D; 123e-5; 0.00123</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/03/14/JavaScript%20Number%E5%AF%B9%E8%B1%A1/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/13/JavaScript%20prototype%EF%BC%88%E5%8E%9F%E5%9E%8B%E5%AF%B9%E8%B1%A1%EF%BC%89/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Personal blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/03/13/JavaScript%20prototype%EF%BC%88%E5%8E%9F%E5%9E%8B%E5%AF%B9%E8%B1%A1%EF%BC%89/" itemprop="url">JavaScript prototype（原型对象）</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-13T17:46:07+08:00">
-                2020-03-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaScript</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><strong>JavaScript prototype（原型对象）</strong><br>所有的JavaScript对象都会从一个prototype(原型对象)中继承属性和方法<br>一个已存在的对象构造器中是不能添加新的属性</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;p&gt;无法给构造函数添加新的属性&lt;&#x2F;p&gt;</span><br><span class="line">        &lt;p id&#x3D;&quot;demo&quot;&gt;&lt;&#x2F;p&gt;</span><br><span class="line">        &lt;script&gt;</span><br><span class="line">            function person(firstname,lastname,age,eyecolor)&#123;</span><br><span class="line">                this.firstname &#x3D; firstname;</span><br><span class="line">                this.lastname &#x3D; lastname;</span><br><span class="line">                this.age &#x3D; age;</span><br><span class="line">                this.eyecolor &#x3D; eyecolor;</span><br><span class="line">            &#125;</span><br><span class="line">            person.language&#x3D;&quot;Englist&quot;;</span><br><span class="line">            var my &#x3D; new person(&quot;John&quot;,&quot;Doe&quot;,50,&quot;red&quot;)</span><br><span class="line">            document.getElementById(&quot;demo&quot;).innerHTML &#x3D; &quot;语言是&quot;+my.language;</span><br><span class="line">        &lt;&#x2F;script&gt;</span><br><span class="line">    &lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/03/13/JavaScript%20prototype%EF%BC%88%E5%8E%9F%E5%9E%8B%E5%AF%B9%E8%B1%A1%EF%BC%89/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/13/JavaScript%20%E5%AF%B9%E8%B1%A1%E9%AB%98%E7%BA%A7%E5%BA%94%E7%94%A8/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Personal blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/03/13/JavaScript%20%E5%AF%B9%E8%B1%A1%E9%AB%98%E7%BA%A7%E5%BA%94%E7%94%A8/" itemprop="url">JavaScript 对象高级应用</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-13T16:34:41+08:00">
-                2020-03-13
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-16T15:59:44+08:00">
+                2020-03-16
               </time>
             
 
@@ -831,44 +1454,168 @@
       
         
           
-            <p><strong>所有事物都是对象</strong><br>JavaScript提供多个内建对象,如 String、Date、Array等,对象只是带有属性和方法的特殊数据类型</p>
+            <p><strong>Window History</strong><br>window.hustory对象在编写时可不使用window这个前缀<br>为了保护用户隐私，对JavaScript访问该对象的方法做出了限制</p>
 <ul>
-<li>布尔型可以是一个对象</li>
-<li>数字型可以是一个对象</li>
-<li>字符串也可以是一个对象</li>
-<li>日期是一个对象</li>
-<li>数字和正则表达式也是对象</li>
-<li>数组是一个对象</li>
-<li>甚至函数也可以是对象</li>
+<li>history.back()与在浏览器点击后退按钮相同</li>
+<li>history.forward()与在浏览器中点击向前的按钮相同</li>
 </ul>
-<p><strong>JavaScritp对象</strong><br>对象只是一种特殊的数据，对象拥有属性和方法<br><strong>访问对象的属性</strong><br>属性是与对象相关的值<br>访问对象属性的语法是</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">objectName.propertyName</span><br><span class="line">使用String对象的length属性来获得字符串的长度</span><br><span class="line">var message &#x3D; &quot;firstName&quot;;</span><br><span class="line">var x &#x3D; message.length;</span><br><span class="line">执行代码后,x的值将是:</span><br><span class="line">9</span><br></pre></td></tr></table></figure>
-<p><strong>访问对象的方法</strong><br>方法是能够再对象上执行的动作<br>可以通过语法来调用方法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ObjectName.methodName()</span><br><span class="line">使用了String对象的toUpperCase()方法来将文本转换为大写</span><br><span class="line">var message &#x3D; &quot;fristName&quot;;</span><br><span class="line">var x &#x3D; message.toUpperCase();</span><br><span class="line">执行代码后,x的值将是:</span><br><span class="line">FIRSTNAME</span><br></pre></td></tr></table></figure>
-<p><strong>创建JavaScript对象</strong><br>通过JavaScript，能够定义并创建自己的对象<br>创建新对象的有两种不同的方式</p>
+<p><strong>Window history.back()</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">            function goBack()&#123;</span><br><span class="line">                window.history.back();</span><br><span class="line">            &#125;</span><br><span class="line">        &lt;&#x2F;script&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;input type&#x3D;&quot;button&quot; value&#x3D;&quot;Back&quot; onclick&#x3D;&quot;goBack()&quot;&gt;</span><br><span class="line">    &lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>Window history.forward()</strong><br>history forWard()方法加载历史列表中的下一个URL<br>这与在浏览器中点击前进按钮是相同的</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">            function goForward()&#123;</span><br><span class="line">                window.history.forward();</span><br><span class="line">            &#125;</span><br><span class="line">        &lt;&#x2F;script&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;input type&#x3D;&quot;button&quot; value&#x3D;&quot;Back&quot; onclick&#x3D;&quot;goForward()&quot;&gt;</span><br><span class="line">    &lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/16/JavaScript%20Window%20Location/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Personal blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/16/JavaScript%20Window%20Location/" itemprop="url">JavaScript Window Location</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-16T15:51:46+08:00">
+                2020-03-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><strong>Window Location</strong><br>window.location对象在编写时可不是有window这个前缀</p>
 <ul>
-<li>定义并创建对象的实例</li>
-<li>使用函数来定义对象，然后创建新的对象实例</li>
+<li>location.hostname  返回web主机的域名</li>
+<li>location.pathname  返回当前页面的路径和文件名</li>
+<li>location.port      返回web主句的端口</li>
+<li>location.protocol  返回所使用的web协议</li>
 </ul>
-<p><strong>创建直接的实例</strong><br>创建了对象的一个新实例,并向其添加了四个属性</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;script&gt;</span><br><span class="line">            person &#x3D; new Object();</span><br><span class="line">            person.firstname &#x3D; &quot;John&quot;;</span><br><span class="line">            person.lastname &#x3D; &quot;Doe&quot;;</span><br><span class="line">            person.age &#x3D; 50;</span><br><span class="line">            person.eyecolor &#x3D; &quot;blue&quot;;</span><br><span class="line">            document.write(person.firstname + &quot;is&quot; + person.age + &quot;years old&quot;)</span><br><span class="line">        &lt;&#x2F;script&gt;</span><br><span class="line">    &lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
-<p>替代语法(使用对象literals)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;script&gt;</span><br><span class="line">            person &#x3D; &#123;firstname:&quot;John&quot;,lastname:&quot;dog&quot;,age:50,eyecolor:&quot;blue&quot;&#125;</span><br><span class="line">            document.write(person.firstname + &quot;is&quot; + person.age + &quot;years old&quot;)</span><br><span class="line">        &lt;&#x2F;script&gt;</span><br><span class="line">    &lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
-<p><strong>使用对象构造器</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;script&gt;</span><br><span class="line">            function person(firstname,lastname,age,eyecolor)&#123;</span><br><span class="line">                this.firstname &#x3D; firstname;</span><br><span class="line">                this.lastname &#x3D; lastname;</span><br><span class="line">                this.age &#x3D; age;</span><br><span class="line">                this.eyecolor &#x3D; eyecolor;</span><br><span class="line">            &#125;</span><br><span class="line">            my &#x3D; new person(&quot;John&quot;,&quot;Doe&quot;,50,&quot;red&quot;)</span><br><span class="line">            document.write(my.firstname + &quot;is&quot; + my.age + &quot;years old&quot;)</span><br><span class="line">        &lt;&#x2F;script&gt;</span><br><span class="line">    &lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
-<p>在JavaScript中,this通常指向的是我们正在执行的函数本身,或者是指向该函数所属的对象(运行时)<br><strong>创建JavaScript对象实例</strong><br>有了对象构造器,就可以创建新的对象实例</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var dog &#x3D; new person(&quot;John&quot;,&quot;Doe&quot;,50,&quot;blue&quot;);</span><br><span class="line">var cat &#x3D; new person(&quot;Sally&quot;,&quot;Rally&quot;,48,&quot;green&quot;);</span><br></pre></td></tr></table></figure>
-<p><strong>把属性添加到JavaScript对象</strong><br>可以通过为对象赋值,向已有对象添加新属性<br>假设person对象已存在，可以为其添加新属性:firstname、lastname、age以及eyecolor:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">person.firstname &#x3D; &quot;John&quot;;</span><br><span class="line">person.lastname &#x3D; &quot;Doe&quot;;</span><br><span class="line">person.age &#x3D; 50;</span><br><span class="line">person.eyecolor &#x3D; &quot;blue&quot;;</span><br><span class="line">x &#x3D; person.firstname;</span><br><span class="line">执行代码后,x的值将是</span><br><span class="line">John</span><br></pre></td></tr></table></figure>
-<p><strong>把方法添加到JavaScript对象</strong><br>方法只不过时附加在对象上的函数<br>在构造器函数内部定义对象的方法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function person(firstname,lastname,age,eyecolor)&#123;</span><br><span class="line">                this.firstname &#x3D; firstname;</span><br><span class="line">                this.lastname &#x3D; lastname;</span><br><span class="line">                this.age &#x3D; age;</span><br><span class="line">                this.eyecolor &#x3D; eyecolor;</span><br><span class="line">                </span><br><span class="line">                this.changName &#x3D; changeName;</span><br><span class="line">                function chnagName(name)&#123;</span><br><span class="line">                    this.lastname &#x3D; name;</span><br><span class="line">                &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>changeName()函数name的值赋给person的lastname属性</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;script&gt;</span><br><span class="line">            function person(firstname,lastname,age,eyecolor)&#123;</span><br><span class="line">                this.firstname &#x3D; firstname;</span><br><span class="line">                this.lastname &#x3D; lastname;</span><br><span class="line">                this.age &#x3D; age;</span><br><span class="line">                this.eyecolor &#x3D; eyecolor;</span><br><span class="line">                this.changeName &#x3D; changeName;</span><br><span class="line">                function changeName(name)&#123;</span><br><span class="line">                    this.lastname &#x3D; name;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            my &#x3D; new person(&quot;John&quot;,&quot;Doe&quot;,50,&quot;red&quot;)</span><br><span class="line">            my.changeName(&quot;Rally&quot;);</span><br><span class="line">            document.write(my.lastname);</span><br><span class="line">        &lt;&#x2F;script&gt;</span><br><span class="line">    &lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
-<p><strong>JavaScript类</strong><br>JavaScript是面向对象的语言,但JavaScript不使用类<br>在JavaScript中,不会创建类，也不会通过类来创建对象<br>JavaScript基于prototype,而不是基于类的<br><strong>Javascript for…in循环</strong><br>Javascript for…in语句循环遍历对象的属性<br>语法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for (variable in object)&#123;</span><br><span class="line">    执行的代码</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>注意: for…in循环中的代码块将针对每个属性执行一次<br>循环遍历对象的属性</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;p&gt;循环遍历对象&quot;person&quot;的属性&lt;&#x2F;p&gt;</span><br><span class="line">        &lt;button onclick&#x3D;&quot;myFunction()&quot;&gt;点击&lt;&#x2F;button&gt;</span><br><span class="line">        &lt;p id&#x3D;&quot;demo&quot;&gt;&lt;&#x2F;p&gt;</span><br><span class="line">        &lt;script&gt;</span><br><span class="line">            function myFunction()&#123;</span><br><span class="line">                var x;</span><br><span class="line">                var txt &#x3D; &quot;&quot;;</span><br><span class="line">                var person &#x3D; &#123;fnaem:&quot;Jon&quot;,lname:&quot;FOX&quot;,age:100&#125;</span><br><span class="line">                for (x in person)&#123;</span><br><span class="line">                    txt &#x3D; txt + person[x];</span><br><span class="line">                &#125;</span><br><span class="line">                document.getElementById(&quot;demo&quot;).innerHTML &#x3D; txt;</span><br><span class="line">            &#125;</span><br><span class="line">        &lt;&#x2F;script&gt;</span><br><span class="line">    &lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
-
+<p><strong>Window Location Href</strong><br>location.href属性返回当前页面的URL</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    document.write(location.href);</span><br><span class="line">&lt;&#x2F;scritp&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>Window Location Pathname</strong><br>location.pathname属性返回URL的路径名</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    document.write(location.pathname);</span><br><span class="line">&lt;&#x2F;scritp&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>Window Location Assign</strong><br>location.assign()方法加载新的文档</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">    function newDoc()&#123;</span><br><span class="line">        window.location.assign(&quot;https:&#x2F;&#x2F;www.baidu.com&quot;)</span><br><span class="line">    &#125;        </span><br><span class="line">    &lt;&#x2F;script&gt;</span><br><span class="line">    &lt;body&gt;s</span><br><span class="line">        &lt;button onclick&#x3D;&quot;newDoc()&quot;&gt;点击&lt;&#x2F;button&gt;</span><br><span class="line">    &lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
           
         
       
@@ -916,7 +1663,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/12/JavaScript%20HTML%20DOM%20%E8%8A%82%E7%82%B9%E5%88%97%E8%A1%A8/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/16/JavaScript%20Window%20Screen/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
@@ -935,7 +1682,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/03/12/JavaScript%20HTML%20DOM%20%E8%8A%82%E7%82%B9%E5%88%97%E8%A1%A8/" itemprop="url">JavaScript HTML DOM 节点列表</a></h1>
+                <a class="post-title-link" href="/2020/03/16/JavaScript%20Window%20Screen/" itemprop="url">JavaScript Window Screen</a></h1>
         
 
         <div class="post-meta">
@@ -947,8 +1694,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-12T17:14:59+08:00">
-                2020-03-12
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-16T15:43:59+08:00">
+                2020-03-16
               </time>
             
 
@@ -1008,759 +1755,17 @@
 
       
         
-          <p>NodeList对象时一个从文档回去的节点列表(集合)<br>NodeList对象类似HTMLCollection对象<br>一些旧版本浏览器中的方法(如:getElementsByClassName())返回的时NodeList对象，而不是HTMLCollection对象<br>所有浏览器的childNodes属性返回的NodeList对象<br>大部分浏览器的querySelectorAll()返回NodeList对象<br>选取了文档中所有的</p><p>节点</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var myNodeList &#x3D; document.querySelectorAll(&quot;p&quot;);</span><br><span class="line">NodeList中的元素可以通过索引(以0为起始位置)来访问</span><br><span class="line">访问第一个&lt;p&gt;元素代码</span><br><span class="line">y &#x3D; myNodeList[0];</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/03/12/JavaScript%20HTML%20DOM%20%E8%8A%82%E7%82%B9%E5%88%97%E8%A1%A8/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/12/JavaScript%20HTML%20DOM%20%E9%9B%86%E5%90%88(Collection)/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Personal blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/03/12/JavaScript%20HTML%20DOM%20%E9%9B%86%E5%90%88(Collection)/" itemprop="url">JavaScript HTML DOM 集合(Collection)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-12T16:57:52+08:00">
-                2020-03-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaScript</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><strong>HTML Collection对象</strong><br>getElementsByTagName()方法返回HTML Collection对象<br>HTMLCollection对象类似包含HTML元素的一个数组<br>获取文档中所有的</p><p>元素</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var x &#x3D; document.getElementsByTagName(&quot;p&quot;);</span><br><span class="line">集合中的元素可以通过索引(以0为起始位置)来访问</span><br><span class="line">访问第一个&lt;p&gt;元素的代码</span><br><span class="line">y &#x3D; x[0];</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/03/12/JavaScript%20HTML%20DOM%20%E9%9B%86%E5%90%88(Collection)/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/12/JavaScript%20HTML%20DOM%20%E5%85%83%E7%B4%A0%20(%E8%8A%82%E7%82%B9)/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Personal blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/03/12/JavaScript%20HTML%20DOM%20%E5%85%83%E7%B4%A0%20(%E8%8A%82%E7%82%B9)/" itemprop="url">JavaScript HTML DOM 元素 (节点)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-12T16:36:49+08:00">
-                2020-03-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaScript</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><strong>创建新的HTML元素(节点)-appendChild()</strong><br>要创建新的HTML元素(节点)需要先创建一个元素，然后再已存在的元素中添加它</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;div id&#x3D;&quot;div1&quot;&gt;</span><br><span class="line">        &lt;p id&#x3D;&quot;p1&quot;&gt;段落1&lt;&#x2F;p&gt;</span><br><span class="line">        &lt;p id&#x3D;&quot;p2&quot;&gt;段落2&lt;&#x2F;p&gt;</span><br><span class="line">        &lt;&#x2F;div&gt;</span><br><span class="line">        &lt;script&gt;</span><br><span class="line">            创建一个&lt;p&gt;元素</span><br><span class="line">            var para &#x3D; document.createElement(&quot;p&quot;);</span><br><span class="line">            为&lt;p&gt;元素创建一个新的文本节点</span><br><span class="line">            var node &#x3D; document.createTextNode(&quot;新段落&quot;);</span><br><span class="line">            将文本节点添加到&lt;p&gt;元素中</span><br><span class="line">            para.appendChild(node);</span><br><span class="line">            最后,在一个已存在的元素中添加p元素</span><br><span class="line">            查找已存在的元素</span><br><span class="line">            var element &#x3D; document.getElementById(&quot;div1&quot;);</span><br><span class="line">            添加到已存在的元素中</span><br><span class="line">            element.appendChild(para);</span><br><span class="line">        &lt;&#x2F;script&gt;</span><br><span class="line">    &lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/03/12/JavaScript%20HTML%20DOM%20%E5%85%83%E7%B4%A0%20(%E8%8A%82%E7%82%B9)/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/11/JavaScript%20HTML%20DOM%20EventListener/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Personal blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/03/11/JavaScript%20HTML%20DOM%20EventListener/" itemprop="url">JavaScript HTML DOM EventListener</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-11T16:32:16+08:00">
-                2020-03-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaScript</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><strong>addEventListener()方法</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;button id&#x3D;&quot;Btn&quot;&gt;点击&lt;&#x2F;button&gt;</span><br><span class="line">        &lt;p id&#x3D;&quot;demo&quot;&gt;&lt;&#x2F;p&gt;</span><br><span class="line">    &lt;&#x2F;body&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        document.getElementById(&quot;Btn&quot;).addEventListener(&quot;click&quot;,displayDate);</span><br><span class="line">        function displayDate()&#123;</span><br><span class="line">            document.getElementById(&quot;demo&quot;).innerHTML&#x3D;Date();</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;&#x2F;script&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/03/11/JavaScript%20HTML%20DOM%20EventListener/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/10/JavaScript%20HTML%20DOM%E4%BA%8B%E4%BB%B6/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Personal blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/03/10/JavaScript%20HTML%20DOM%E4%BA%8B%E4%BB%B6/" itemprop="url">JavaScript HTML DOM事件</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-10T15:46:55+08:00">
-                2020-03-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaScript</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>HTML DOM使JavaScript有能力对HTML事件做出反应<br><strong>对事件做出反应</strong><br>我们可以在事件发生时执行JavaScript,比如当用户在HTML元素上点击时.<br>如需在用户点击某个元素时执行代码，向一个HTML事件属性添加JavaScript代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">onclick&#x3D;JavaScript</span><br></pre></td></tr></table></figure>
-<p>HTML事件的例子:</p>
+            <p><strong>Window Screen</strong><br>window.screen对象在编写时可以不使用window这个前缀<br>一些属性:</p>
 <ul>
-<li>当用户带年纪鼠标时</li>
-<li>当网页已加载时   </li>
-<li>当图像已加载时</li>
-<li>当鼠标移动到元素时</li>
-<li>当输入字段被改变时</li>
-<li>当提交HTML表单时</li>
-<li>当用户触发按键时</li></ul>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/03/10/JavaScript%20HTML%20DOM%E4%BA%8B%E4%BB%B6/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/10/JavaScript%20HTML%20DOM%E6%94%B9%E5%8F%98CSS/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Personal blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/03/10/JavaScript%20HTML%20DOM%E6%94%B9%E5%8F%98CSS/" itemprop="url">JavaScript HTML DOM改变CSS</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-10T15:35:26+08:00">
-                2020-03-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
+<li>screen.availWidth 可用的屏幕宽度</li>
+<li>screen.availHeight 可用的屏幕高度</li>
+</ul>
+<p><strong>Window Screen可用宽度</strong><br>screen.availWidth属性返回访问者屏幕的宽度，以像素计，减去界面特性，比如窗口任务栏</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;script&gt;</span><br><span class="line">            document.write(&quot;可用的宽度&quot;+screen.availWidth);</span><br><span class="line">        &lt;&#x2F;script&gt;</span><br><span class="line">    &lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>Window Screen可用高度</strong><br>screen.availHeight属性返回访问者屏幕的高度，以像素计,减去界面特性，比如窗口任务栏</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;script&gt;</span><br><span class="line">            document.write(&quot;可用的宽度&quot;+screen.availHeight);</span><br><span class="line">        &lt;&#x2F;script&gt;</span><br><span class="line">    &lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaScript</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><strong>改变HTML样式</strong><br>如需该变HTML元素的样式,语法：<br>document.getElementById(id).style.property=新样式</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;p id&#x3D;&quot;demo1&quot;&gt;修改前&lt;&#x2F;p&gt;</span><br><span class="line">        &lt;p id&#x3D;&quot;demo2&quot;&gt;修改后&lt;&#x2F;p&gt;</span><br><span class="line">        &lt;script&gt;</span><br><span class="line">        document.getElementById(&quot;demo2&quot;).style.color&#x3D;&quot;blue&quot;;</span><br><span class="line">        document.getElementById(&quot;demo2&quot;).style.fontFamily&#x3D;&quot;Arial&quot;;</span><br><span class="line">        document.getElementById(&quot;demo2&quot;).style.fontSize&#x3D;&quot;larger&quot;;</span><br><span class="line">        &lt;&#x2F;script&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/03/10/JavaScript%20HTML%20DOM%E6%94%B9%E5%8F%98CSS/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
         
       
     </div>
@@ -1798,7 +1803,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1848,7 +1853,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">47</span>
+                  <span class="site-state-item-count">62</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1859,7 +1864,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
